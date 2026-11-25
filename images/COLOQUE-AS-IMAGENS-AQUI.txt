@@ -1,0 +1,17 @@
+Imagens do funil. Para trocar alguma, substitua o arquivo mantendo o
+mesmo nome (ou troque o nome também no index.html).
+
+Fotos enviadas: capa-hero.jpg, cautela.jpg, truquezinho.jpg, especialista.webp, prova-1/2/3.jpg,
+  checklist-beneficios.webp, produto-oferta.webp, produto-principal.webp, bonus-*.webp
+Artes criadas (SVG, pode trocar por foto quando quiser):
+  mulher-triste.svg (HOJE),
+  casal-feliz.svg (COM O GUIA),
+  garantia-180.svg,
+  selos-seguranca.svg, idade-mais30.svg, idade-menos30.svg
+Opcional: loading-run.gif (sem ele aparece um spinner vermelho)
+Mais prints de clientes: adicione prova-4.jpg etc. e inclua na lista
+"provas" / "depoimentos" dentro do CONFIG no index.html.
+
+Fotos das páginas 4 e 5: pagina-4.jpg, pagina-5.jpg
+Depoimentos da oferta: depoimento-1..4.webp
+Página 8: psicologia.jpg | Página 9: cerebro.mp4 (+ cerebro-poster.jpg)

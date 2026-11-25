@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Os 12 Gatilhos Secretos</title>
+<meta name="description" content="Os 12 Gatilhos Secretos utilizados por mulheres poderosas." />
+<meta property="og:title" content="Os 12 Gatilhos Secretos" />
+<meta property="og:description" content="Mesmo que ele esteja frio, distante ou dizendo que não quer nada sério..." />
+<meta property="og:image" content="images/capa-hero.jpg" />
+<meta name="theme-color" content="#0a0a0a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#121212;
+    --card:#161616;
+    --card-2:#1e1e1e;
+    --line:#2a2a2a;
+    --gray:#9a9a9a;
+    --gray-2:#6b6b6b;
+    --text:#f4f4f4;
+    --red:#e50914;
+    --red-2:#ff2a3d;
+    --red-dark:#8f0610;
+    --red-glow:rgba(229,9,20,.45);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--text)}
+  body{
+    font-family:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(229,9,20,.18) 0%, transparent 60%),
+      var(--bg);
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  .wrap{max-width:560px;margin:0 auto;padding:40px 20px 60px}
+
+  /* ---------- Steps ---------- */
+  .step{display:none;animation:fadeUp .45s ease both}
+  .step.active{display:block}
+  .center{text-align:center}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  /* ---------- Typography ---------- */
+  h1{font-size:clamp(28px,7vw,40px);font-weight:900;line-height:1.15;text-align:center;letter-spacing:-.5px}
+  h2{font-size:clamp(22px,5.6vw,30px);font-weight:900;line-height:1.25;text-align:center}
+  p.lead{color:var(--gray);text-align:center;font-size:15px;margin-top:14px;line-height:1.5}
+  p.txt{font-size:18px;line-height:1.6;text-align:center;font-weight:700}
+  p.txt + p.txt{margin-top:16px}
+  .hl{color:var(--red-2)}
+  .hl-box{background:rgba(229,9,20,.18);color:var(--red-2);padding:0 8px;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .warn{color:var(--red-2);font-weight:900;font-size:clamp(24px,6vw,32px);text-align:center;margin-bottom:18px;text-shadow:0 0 22px var(--red-glow)}
+  .muted{color:var(--gray)}
+  em{font-style:italic}
+
+  /* Títulos com fundo iluminado */
+  h1,h2,.warn,.congrats,.section-title,.bonus-head{
+    position:relative;isolation:isolate;
+    padding:18px 16px;border-radius:18px;
+    background:radial-gradient(ellipse at 50% 50%,rgba(255,0,0,.22) 0%,rgba(255,0,0,.08) 45%,transparent 75%);
+    text-shadow:0 0 18px rgba(255,40,40,.55);
+  }
+  h1::before,h2::before,.warn::before,.congrats::before,.section-title::before,.bonus-head::before{
+    content:"";position:absolute;inset:6% 8%;z-index:-1;border-radius:50%;
+    background:radial-gradient(ellipse,rgba(255,0,0,.45),transparent 70%);
+    filter:blur(28px);animation:titleGlow 3s ease-in-out infinite;
+  }
+  @keyframes titleGlow{0%,100%{opacity:.7}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){h1::before,h2::before,.warn::before,.congrats::before,.section-title::before,.bonus-head::before{animation:none}}
+  /* Manchetes (páginas 4 e 5) */
+  .headline{max-width:350px;margin:20px auto 0;background:#fff;border-radius:14px;padding:18px 16px 20px;box-shadow:0 0 30px rgba(255,0,0,.35);text-align:center}
+  .headline .tag{display:inline-block;background:#ff0000;color:#fff;font-weight:900;font-size:12px;letter-spacing:1px;padding:5px 12px;border-radius:99px;margin-bottom:12px}
+  .headline .hl-lines{font-size:clamp(16px,4.8vw,20px);font-weight:900;line-height:1.25;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .headline .hl-lines span{background:#0a0a0a;color:#fff;padding:4px 10px;white-space:nowrap}
+  .headline .hl-lines span.red{background:#ff0000}
+  .headline .icons{font-size:44px;margin-top:14px;letter-spacing:6px}
+  .headline + .media.square{margin-top:14px}
+  /* ---------- Images / placeholders ---------- */
+  .media{margin:26px auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 40px rgba(0,0,0,.6);max-width:420px}
+  .media img{width:100%;height:auto}
+  .media.small{max-width:260px;margin:20px auto}
+  .media.square{max-width:350px;margin:20px auto;aspect-ratio:1}
+  .media.square img{width:100%;height:100%;object-fit:cover}
+  .media.square.fit{background:#000}
+  .media.square.fit img{object-fit:contain}
+  .media.video{background:#000}
+  .media.video video{display:block;width:100%;height:auto}
+  .media.white{background:#fff;padding:14px 10px;max-width:480px}
+  .media.round{border:none;border-radius:50%;box-shadow:0 0 40px var(--red-glow)}
+  .ph{
+    width:100%;aspect-ratio:var(--ar,4/3);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    background:repeating-linear-gradient(45deg,#151515 0 12px,#1a1a1a 12px 24px);
+    border:2px dashed #3a3a3a;border-radius:inherit;color:var(--gray-2);
+    font-size:12px;font-weight:700;text-align:center;padding:10px;
+  }
+  .ph b{color:var(--gray);font-size:13px}
+  .ph::before{content:"🖼️";font-size:26px;opacity:.6}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:block;width:100%;max-width:420px;margin:28px auto 0;
+    background:linear-gradient(180deg,var(--red-2),var(--red));
+    color:#fff;border:none;border-radius:12px;padding:18px 22px;
+    font-family:inherit;font-size:18px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;
+    cursor:pointer;text-align:center;text-decoration:none;
+    box-shadow:0 0 0 0 var(--red-glow),0 10px 30px rgba(229,9,20,.35);
+    animation:pulse 2s infinite;
+    transition:transform .15s ease,filter .15s ease;
+  }
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn:active{transform:scale(.98)}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 var(--red-glow),0 10px 30px rgba(229,9,20,.35)}
+    70%{box-shadow:0 0 0 14px rgba(229,9,20,0),0 10px 30px rgba(229,9,20,.35)}
+    100%{box-shadow:0 0 0 0 rgba(229,9,20,0),0 10px 30px rgba(229,9,20,.35)}
+  }
+  /* CTAs da oferta final: vermelho vivo e pulsando forte */
+  .btn.cta{
+    background:#ff0000;border:2px solid #ff4d4d;text-shadow:0 1px 2px rgba(0,0,0,.35);
+    animation:pulseCta 1.3s ease-in-out infinite;transition:none;
+  }
+  .btn.cta:hover{background:#ff1a1a;filter:none;animation-play-state:paused;transform:scale(1.05)}
+  .btn.cta:active{transform:scale(.97)}
+  @keyframes pulseCta{
+    0%  {transform:scale(1);   box-shadow:0 0 0 0 rgba(255,0,0,.75),0 0 22px rgba(255,0,0,.55)}
+    50% {transform:scale(1.06);box-shadow:0 0 0 12px rgba(255,0,0,.25),0 0 40px rgba(255,0,0,.9)}
+    100%{transform:scale(1);   box-shadow:0 0 0 22px rgba(255,0,0,0),0 0 22px rgba(255,0,0,.55)}
+  }
+  @media (prefers-reduced-motion:reduce){.btn,.btn.cta{animation:none}}
+  .yesno{display:flex;gap:14px;justify-content:center;margin-top:30px}
+  .yesno button{
+    min-width:130px;padding:16px 26px;border-radius:12px;font-family:inherit;font-weight:900;font-size:17px;cursor:pointer;
+    transition:transform .15s ease,filter .15s ease;
+  }
+  .yes{background:linear-gradient(180deg,var(--red-2),var(--red));color:#fff;border:none;box-shadow:0 0 28px var(--red-glow)}
+  .no{background:var(--card);color:var(--gray-2);border:1px solid var(--line)}
+  .yesno button:hover{transform:translateY(-2px)}
+
+  /* ---------- Quiz ---------- */
+  .progress-head{display:flex;justify-content:space-between;font-size:12px;color:var(--gray);margin-bottom:8px;max-width:420px;margin-inline:auto}
+  .progress{height:8px;background:var(--card-2);border-radius:99px;overflow:hidden;max-width:420px;margin:0 auto 34px}
+  .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red-dark),var(--red-2));border-radius:99px;transition:width .5s ease;box-shadow:0 0 12px var(--red-glow)}
+  .q-intro{font-size:clamp(19px,5vw,24px);font-weight:900;text-align:center;line-height:1.35}
+  .q-title{font-size:clamp(19px,5vw,23px);font-weight:900;text-align:center;margin:26px 0 22px;line-height:1.35}
+  .opts{display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto}
+  .opt{
+    background:var(--card);border:1px solid var(--line);color:var(--text);
+    border-radius:12px;padding:18px 20px;font-family:inherit;font-size:17px;font-weight:800;text-align:left;cursor:pointer;
+    transition:border-color .15s,background .15s,transform .15s;
+  }
+  .opt:hover{border-color:var(--red);background:#1c1010;transform:translateX(3px)}
+  .opt.sel{border-color:var(--red-2);background:#2a0d10}
+  .opts.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:400px}
+  .opt.img{text-align:center;padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .opt.img .avatar{width:96px;height:96px;border-radius:50%;overflow:hidden;background:radial-gradient(circle,var(--red-dark),#300);border:2px solid var(--red)}
+  .opt.img .avatar img{width:100%;height:100%;object-fit:cover}
+  .opt.img .avatar .ph{aspect-ratio:1;border-radius:50%;font-size:0;padding:4px}
+  .opt.img .avatar .ph b{font-size:10px}
+  .opt.img .avatar .ph::before{font-size:18px}
+
+  /* ---------- Loading ---------- */
+  .loading-gif{width:180px;margin:0 auto 26px;border-radius:12px;overflow:hidden}
+  .loading-gif .ph{--ar:1/1}
+  .spinner{width:64px;height:64px;border-radius:50%;border:5px solid var(--card-2);border-top-color:var(--red-2);margin:0 auto 22px;animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .load-bar{height:12px;background:var(--card-2);border-radius:99px;overflow:hidden;max-width:380px;margin:22px auto 10px}
+  .load-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red-dark),var(--red-2));box-shadow:0 0 14px var(--red-glow)}
+  .load-pct{font-size:28px;font-weight:900;color:var(--red-2);text-align:center}
+  .load-msg{color:var(--gray);text-align:center;margin-top:10px;font-size:15px;min-height:22px}
+
+  /* ---------- Carousel ---------- */
+  .carousel{position:relative;max-width:420px;margin:26px auto 8px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--card);touch-action:pan-y;user-select:none}
+  .track{display:flex;transition:transform .5s ease}
+  .slide{min-width:100%}
+  .slide img{width:100%;height:auto;pointer-events:none}
+  .slide .ph{--ar:3/4}
+  .dots{display:flex;gap:6px;justify-content:center;margin-top:12px}
+  .dots i{width:8px;height:8px;border-radius:50%;background:#333;transition:background .2s,width .2s}
+  .dots i.on{background:var(--red-2);width:22px;border-radius:99px}
+  .hint{font-size:12px;color:var(--gray-2);text-align:center;margin-top:8px}
+
+  /* ---------- Offer ---------- */
+  .congrats{font-size:clamp(28px,7vw,38px);font-weight:900;text-align:center;color:var(--red-2);text-shadow:0 0 24px var(--red-glow)}
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px auto;max-width:440px}
+  .ba .lbl{text-align:center;font-weight:900;font-size:15px;margin-bottom:8px;letter-spacing:.5px}
+  .ba .lbl.before{color:var(--gray)}
+  .ba .lbl.after{color:var(--red-2)}
+  .ba .pic{border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:1}
+  .ba .pic img{width:100%;height:100%;object-fit:cover}
+  .ba .pic .ph{--ar:1/1;height:100%}
+  .ba .pic.after{border-color:var(--red);box-shadow:0 0 24px var(--red-glow)}
+  .section-title{font-size:22px;font-weight:900;text-align:center;margin:46px 0 18px}
+  .price-box{
+    margin:34px auto 0;max-width:440px;background:linear-gradient(180deg,#141414,#0e0e0e);
+    border:2px solid var(--red);border-radius:18px;padding:26px 20px;text-align:center;
+    box-shadow:0 0 40px rgba(229,9,20,.25);
+  }
+  .price-box .prod{max-width:380px;margin:0 auto 18px;border-radius:12px;overflow:hidden}
+  .price-box .prod .ph{--ar:1/1}
+  .price-box h3{font-size:22px;font-weight:900;line-height:1.2}
+  .price-box .plus{color:var(--red-2);font-weight:900;margin-top:4px}
+  .old{color:var(--gray-2);text-decoration:line-through;margin-top:16px;font-weight:700}
+  .por{color:var(--gray);font-size:14px;margin-top:6px}
+  .big{font-size:clamp(34px,9vw,44px);font-weight:900;color:var(--red-2);line-height:1.1;text-shadow:0 0 18px var(--red-glow)}
+  .avista{color:var(--text);font-weight:800;margin-top:4px}
+  .trust{font-size:12px;color:var(--gray-2);text-align:center;margin-top:14px}
+  .bonus-head{font-size:24px;font-weight:900;text-align:center;margin:54px 0 6px}
+  .bonus{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 18px;margin-top:22px;text-align:center}
+  .bonus .tag{display:inline-block;background:var(--red);color:#fff;font-weight:900;font-size:13px;padding:6px 14px;border-radius:99px;margin-bottom:16px}
+  .bonus .bimg{max-width:300px;margin:0 auto 16px;border-radius:12px;overflow:hidden}
+  .bonus .bimg .ph{--ar:1/1}
+  .bonus h4{font-size:20px;font-weight:900;margin-bottom:10px}
+  .bonus p{color:#cfcfcf;line-height:1.6;font-size:15px;white-space:pre-line}
+  .bonus .val{margin-top:14px;font-weight:800}
+  .bonus .val s{color:var(--gray-2)}
+  .bonus .val b{color:var(--red-2)}
+  .faq{max-width:480px;margin:0 auto}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .faq summary{padding:16px 18px;font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--red-2);font-size:22px;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{padding:0 18px 16px;color:#cfcfcf;line-height:1.6}
+  .guarantee{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:40px;text-align:center}
+  .guarantee .gimg{width:170px}
+  .guarantee .gimg .ph{--ar:1/1;border-radius:50%}
+  .guarantee p{color:#d5d5d5;line-height:1.6;max-width:420px}
+  .seals{max-width:360px;margin:26px auto 0}
+  .seals .ph{--ar:4/1}
+  .badges{display:flex;justify-content:center;gap:22px;margin-top:20px;color:var(--gray);font-size:14px;font-weight:700}
+  .badges span::before{content:"✔ ";color:var(--red-2)}
+  footer{text-align:center;color:var(--gray-2);font-size:12px;margin-top:50px;line-height:1.6}
+</style>
+</head>
+<body>
+<main class="wrap" id="app">
+
+  <!-- ===================== 1. HERO ===================== -->
+  <section class="step active" data-step="hero">
+    <h1>Os <span class="hl-box">12 Gatilhos Secretos</span> utilizado por mulheres poderosas que fará qualquer homem ficar <span class="hl-box">obcecado</span> por você...</h1>
+    <p class="lead">Mesmo que ele esteja frio, distante ou dizendo que não quer nada sério...</p>
+    <div class="media"><img data-src="images/capa-hero.jpg" alt="Casal apaixonado" data-ar="4/5"></div>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 2. USE COM CAUTELA ===================== -->
+  <section class="step" data-step="cautela">
+    <div class="warn">USE COM CAUTELA</div>
+    <p class="txt">Pois esse é o mesmo <span class="hl">segredo sujo</span> que mulheres comuns estão usando para transformar homens frios e distantes em parceiros <span class="hl">completamente devotados</span>…</p>
+    <div class="media small"><img data-src="images/cautela.jpg" alt="Pedido de noivado com rosas" data-ar="800/1067"></div>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 3. TRUQUEZINHO ===================== -->
+  <section class="step" data-step="truquezinho">
+    <p class="txt">Esse <span class="hl">"truquezinho"</span> faz homens que juravam não querer nada sério mudarem de ideia e <span class="hl">correrem atrás</span>!</p>
+    <div class="media small"><img data-src="images/truquezinho.jpg" alt="Conversa: ele sentindo sua falta" data-ar="736/1308"></div>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 4. SEGREDINHO ===================== -->
+  <section class="step" data-step="segredinho">
+    <p class="txt">Esse <span class="hl">"segredinho"</span> gera uma obsessão tão forte nele, mas tão forte, que em poucos meses ele já está falando em <span class="hl">compromisso sério</span>…</p>
+    <div class="media square"><img data-src="images/pagina-4.jpg" alt="Pedido de namoro com flores no restaurante" data-ar="1/1"></div>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 5. RESULTADO ===================== -->
+  <section class="step" data-step="resultado">
+    <p class="txt">E o melhor: <span class="hl">sem joguinhos</span>, sem se humilhar e sem correr atrás. <span class="hl">ELE</span> é quem passa a ter medo de te perder!</p>
+    <div class="media square"><img data-src="images/pagina-5.jpg" alt="Casal abraçado com flores" data-ar="1/1"></div>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 6. DECISÃO SIM/NÃO ===================== -->
+  <section class="step" data-step="decisao1">
+    <h2>Você gostaria de conhecer o truque para deixar qualquer homem <span class="hl">OBCECADO</span> por você?</h2>
+    <div class="yesno">
+      <button class="yes" data-next>SIM</button>
+      <button class="no" data-next>NÃO</button>
+    </div>
+  </section>
+
+  <!-- ===================== 7. ESPECIALISTA ===================== -->
+  <section class="step" data-step="especialista">
+    <h2>Então vamos lá !!</h2>
+    <div class="media round" style="max-width:280px"><img data-src="images/especialista.webp" alt="Especialista" data-ar="1/1"></div>
+    <p class="txt">Eu me chamo <span class="hl" data-cfg="especialistaNome"></span>, sou <span class="hl" data-cfg="especialistaCargo1"></span> e <span class="hl" data-cfg="especialistaCargo2"></span>…</p>
+    <p class="txt">E já ajudei mais de <span class="hl" data-cfg="mulheresAjudadas"></span> a conquistarem e reconquistarem seus parceiros.</p>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 8. INVESTIGAÇÃO ===================== -->
+  <section class="step" data-step="investigacao">
+    <p class="txt">Recentemente resolvi investigar a fundo a <span class="hl">psicologia por trás</span> dos relacionamentos em que o homem fica tão <span class="hl">obcecado</span>, que muda completamente de comportamento em poucas semanas.</p>
+    <div class="media"><img data-src="images/psicologia.jpg" alt="A psicologia da paixão no cérebro" data-ar="768/574"></div>
+    <p class="txt">Depois de <span class="hl">6 meses estudando</span> esses casos, foi que eu descobri o <span class="hl">segredinho sujo</span> que gera essa <span class="hl">Obsessão</span>.</p>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 9. SEGREDINHO SUJO ===================== -->
+  <section class="step" data-step="gatilhos">
+    <div class="media video"><video src="images/cerebro.mp4" poster="images/cerebro-poster.jpg" autoplay muted loop playsinline preload="auto"></video></div>
+    <p class="txt">Ao estudar tudo o que essas mulheres faziam, eu encontrei <span class="hl">12 gatilhos da obsessão</span> que elas ativavam (e ainda ativam) neles… Esses gatilhos são ativados através de <span class="hl">ações, gestos, falas e mensagens específicas</span>!</p>
+    <p class="txt">E esses <span class="hl">12 gatilhos</span> irão funcionar pra você, mesmo que você não tenha o corpo de uma modelo… Ou não se ache muito bonita…</p>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 10. CARROSSEL DE PROVAS ===================== -->
+  <section class="step" data-step="provas">
+    <p class="txt">E a prova disso são as mulheres, que quando começaram a aplicar o passo a passo do <span class="hl">Guia da Obsessão Inabalável</span>, me mandaram fotos como essas… 👇</p>
+    <div class="carousel" id="carousel"><div class="track" id="track"></div></div>
+    <div class="dots" id="dots"></div>
+    <p class="hint">Toque para pausar · Arraste para navegar</p>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 11. SEGREDO SIM/NÃO ===================== -->
+  <section class="step" data-step="segredo">
+    <h2>Você se compromete a manter em <span class="hl">segredo</span> as informações da próxima etapa?</h2>
+    <div class="yesno">
+      <button class="yes" data-next>SIM</button>
+      <button class="no" data-next>NÃO</button>
+    </div>
+  </section>
+
+  <!-- ===================== 12. QUIZ ===================== -->
+  <section class="step" data-step="quiz">
+    <div class="progress-head"><span id="qCount">Pergunta 1 de 5</span><span id="qPct">0%</span></div>
+    <div class="progress"><span id="qBar"></span></div>
+    <p class="q-intro" id="qIntro">Responda 5 perguntas para que seu Guia de Obsessão Inabalável seja liberado...</p>
+    <p class="q-title" id="qTitle"></p>
+    <div class="opts" id="qOpts"></div>
+  </section>
+
+  <!-- ===================== 13. LOADING ===================== -->
+  <section class="step" data-step="loading">
+    <div class="loading-gif"><img data-src="images/loading-run.gif" alt="Carregando" data-ar="1/1" data-fallback="spinner"></div>
+    <h2 id="loadTitle">Analisando seu perfil...</h2>
+    <p class="lead">Você está prestes a descobrir como se tornar a mulher que ele não consegue tirar da cabeça</p>
+    <div class="load-bar"><span id="loadBar"></span></div>
+    <div class="load-pct" id="loadPct">0%</div>
+    <p class="load-msg" id="loadMsg">Preparando os 12 gatilhos secretos para você...</p>
+  </section>
+
+  <!-- ===================== 14. OFERTA FINAL ===================== -->
+  <section class="step" data-step="oferta">
+    <div class="congrats">🎉 PARABÉNS</div>
+    <p class="lead" style="font-size:17px;color:#d8d8d8">Se você chegou até aqui, considere-se uma mulher de sorte. Somente <span class="hl" style="font-weight:900">57 entre 1000 mulheres</span> terão acesso ao conteúdo polêmico que você vai ver aqui.</p>
+
+    <div class="ba">
+      <div><div class="pic"><img data-src="images/mulher-triste.svg" alt="Antes - situação atual" data-ar="1/1"></div></div>
+      <div><div class="pic after"><img data-src="images/casal-feliz.svg" alt="Depois - com o guia" data-ar="1/1"></div></div>
+    </div>
+
+    <p class="txt">Aplique os <span class="hl">12 gatilhos</span> que você conseguirá <em>(acredite se quiser)</em>…</p>
+    <div class="media white"><img data-src="images/checklist-beneficios.webp" alt="Benefícios do guia" data-ar="800/739"></div>
+    <a class="btn cta" href="#" target="_blank" rel="noopener noreferrer">🔥 Quero obter os 12 gatilhos</a>
+
+    <div class="section-title">💬 O que estão dizendo:</div>
+    <div id="depoimentos"></div>
+
+    <p class="txt" style="margin-top:36px">Eu vou te explicar de forma fácil, simples e sem enrolação, cada um dos <span class="hl">"12 gatilhos"</span> que são necessários para deixar ele <span class="hl">OBCECADO</span> por você!</p>
+    <p class="txt" style="font-weight:600;color:#cfcfcf">Eu deixei esse guia tão fácil e simples de aprender e de praticar, que até o final do dia você vai saber exatamente o que precisa fazer.</p>
+    <p class="txt" style="margin-top:22px">Só hoje nessa página você poderá ter acesso ao <span class="hl">Guia da Obsessão Inabalável + 09 Bônus</span> com <span class="hl">80% de desconto!</span></p>
+
+    <div class="price-box">
+      <div class="prod"><img data-src="images/produto-oferta.webp" alt="Guia da Obsessão Inabalável + 9 Bônus" data-ar="1/1"></div>
+      <h3>GUIA DA OBSESSÃO INABALÁVEL</h3>
+      <div class="plus">+ 9 BÔNUS EXCLUSIVOS GRÁTIS</div>
+      <div class="old">De: <span data-cfg="precoDe"></span></div>
+      <div class="por">por apenas:</div>
+      <div class="big" data-cfg="parcelado"></div>
+      <div class="avista">ou <span data-cfg="precoAVista"></span> à vista</div>
+      <a class="btn cta" href="#" target="_blank" rel="noopener noreferrer">🔥 Quero obter os 12 gatilhos</a>
+      <p class="trust">Satisfação Garantida - Compra Segura - Privacidade Protegida</p>
+    </div>
+
+    <div class="bonus-head">🎁 TUDO ISSO VAI SER SEU!</div>
+    <div id="bonusList"></div>
+    <a class="btn cta" href="#" target="_blank" rel="noopener noreferrer">🔥 Quero obter os 12 gatilhos</a>
+    <p class="trust">Satisfação Garantida - Compra Segura - Privacidade Protegida</p>
+
+    <div class="section-title">Perguntas Frequentes</div>
+    <div class="faq" id="faq"></div>
+
+    <div class="guarantee">
+      <div class="gimg"><img data-src="images/garantia-180.svg" alt="Garantia 180 dias incondicional" data-ar="1/1"></div>
+      <p>Você tem <span class="hl" style="font-weight:900">180 dias de garantia incondicional</span>. Se não ficar satisfeita, devolvemos 100% do seu investimento.</p>
+    </div>
+    <div class="seals"><img data-src="images/selos-seguranca.svg" alt="Selos de segurança" data-ar="4/1"></div>
+    <div class="badges"><span>Compra 100% segura</span><span>Acesso imediato</span></div>
+
+    <footer>© <span id="year"></span> Guia da Obsessão Inabalável. Todos os direitos reservados.<br>Este produto não garante resultados específicos; os resultados variam de pessoa para pessoa.</footer>
+  </section>
+
+</main>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — edite aqui textos, preços e link de checkout
+   ========================================================= */
+const CONFIG = {
+  checkoutUrl: "https://pay.cakto.com.br/5Fz9Lvk",   // link do checkout Cakto
+  repassarUTMs: true,                                // repassa ?utm_... da página para o checkout
+
+  especialistaNome: "Letícia Pinheiro",
+  especialistaCargo1: "Psicanalista",
+  especialistaCargo2: "Mentora de Mulheres",
+  mulheresAjudadas: "3.719 mulheres",
+
+  precoDe: "R$ 427,00",
+  parcelado: "8x de R$ 5,29",
+  precoAVista: "R$ 37,00",
+
+  loadingSegundos: 6,
+
+  provas: [
+    "images/prova-1.jpg","images/prova-2.jpg","images/prova-3.jpg"
+  ],
+  depoimentos: [
+    "images/depoimento-1.webp","images/depoimento-2.webp","images/depoimento-3.webp","images/depoimento-4.webp"
+  ],
+
+  quiz: [
+    { q: "Qual sua idade? (1/5)", type: "img", opts: [
+        { t: "👩 + 30", img: "images/idade-mais30.svg" },
+        { t: "👧 - 30", img: "images/idade-menos30.svg" } ] },
+    { q: "Qual o seu estado de relacionamento atual?", opts: [
+        { t: "💔 Solteira" }, { t: "💑 Namorando" }, { t: "💍 Casada" }, { t: "🥀 Divorciada/Separada" } ] },
+    { q: "O quão satisfeita você está com sua vida amorosa?", opts: [
+        { t: "😢 Nada satisfeita" }, { t: "😕 Pouco satisfeita" }, { t: "😊 Muito satisfeita" } ] },
+    { q: "Se você tivesse o poder de fazer ele ser completamente devotado a você, o que faria?", opts: [
+        { t: "👑 Faria ele me valorizar mais" }, { t: "🥰 Faria ele ser mais presente e carinhoso" },
+        { t: "🔒 Faria ele nunca mais olhar para outra" }, { t: "💎 Faria ele me pedir em casamento" } ] },
+    { q: "Você acredita que existe uma forma de despertar obsessão genuína em um homem?", opts: [
+        { t: "✨ Sim, com certeza!" }, { t: "🤔 Tenho dúvidas, mas quero descobrir" } ] }
+  ],
+
+  bonus: [
+    { tag: "VOCÊ GANHA ⬇️", img: "images/produto-principal.webp", t: "Guia da Obsessão Inabalável",
+      d: "O guia completo com os 12 gatilhos secretos que vão fazer ele ficar obcecado por você. Aprenda técnicas psicológicas poderosas para criar uma conexão irresistível." },
+    { tag: "BÔNUS 1 ⬇️", img: "images/bonus-enlouquecer.webp", t: "Como Enlouquecer um Homem na Cama",
+      d: "Esse bônus é um verdadeiro guia para despertar os instintos mais profundos de qualquer homem. Nele, você vai descobrir segredos poderosos que vão fazer ele chegar no ápice do prazer, ao ponto de nunca mais te tirar da cabeça.\n\nImagine ser a mulher que faz ele sentir coisas que ele nunca nem sabia que eram possíveis… Só de pensar em você, ele vai ficar ansioso para te ter novamente, te tratando como a única mulher capaz de satisfazer ele de verdade.\n\nCom essas técnicas, você vai se tornar inesquecível." },
+    { tag: "BÔNUS 2 ⬇️", img: "images/bonus-frases.webp", t: "Frases Hipnóticas",
+      d: "Você vai aprender 13 frases irresistíveis que entram direto na mente dele, despertando desejos profundos e fazendo ele se conectar com você como nunca antes.\n\nUma dessas frases, tão inocente quanto poderosa, é capaz de deixar ele completamente fascinado, pensando em você dias e noites, sem conseguir evitar.\n\nCom essas palavras mágicas, você será a mulher que ele nunca mais vai querer perder. 💌" },
+    { tag: "BÔNUS 3 ⬇️", img: "images/bonus-lendo.webp", t: "Lendo um Homem",
+      d: "Desvende os segredos da linguagem corporal masculina e entenda exatamente o que ele está pensando e sentindo, mesmo sem ele dizer uma palavra.\n\nIsso vai te dar uma vantagem poderosa: saber como agir e falar no momento certo para conquistá-lo ainda mais, tornando impossível para ele resistir a você. 🕵️‍♀️❤️" },
+    { tag: "BÔNUS 4 ⬇️", img: "images/bonus-checklist.webp", t: "Checklist: Atraia um Homem em até 7 Dias",
+      d: "Atraia um homem em até 7 dias com este checklist prático e poderoso.\n\nDescubra exatamente o que fazer, passo a passo, para capturar a atenção e o interesse dele de forma irresistível, mesmo que ele ainda não te conheça bem.\n\nCom essas ações simples e estratégicas, você vai se tornar inesquecível e impossível de ignorar. ✅❤️" },
+    { tag: "BÔNUS 5 ⬇️", img: "images/bonus-amor-eterno.webp", t: "Guia do Amor Eterno",
+      d: "Descubra como criar uma conexão tão profunda que ele vai querer estar ao seu lado para sempre.\n\nCom o Guia do Amor Eterno, você aprenderá segredos para construir um relacionamento sólido, cheio de paixão e cumplicidade, que faz ele se sentir único ao seu lado.\n\nTransforme seu amor em algo inesquecível e duradouro. 💖✨" },
+    { tag: "BÔNUS 6 ⬇️", img: "images/bonus-sentir-falta.webp", t: "Como Fazer Ele Sentir Sua Falta",
+      d: "Aprenda como despertar nele um desejo irresistível de estar ao seu lado, mesmo quando vocês estiverem distantes.\n\nVocê descobrirá ações e palavras simples que vão deixá-lo pensando em você o tempo todo, ansiando pelo próximo momento juntos.\n\nSeja a mulher que ele nunca consegue esquecer. 💭❤️" },
+    { tag: "BÔNUS 7 ⬇️", img: "images/bonus-perfumes.webp", t: "Lista de Perfumes Irresistíveis",
+      d: "Descubra os perfumes que despertam desejo e tornam você simplesmente inesquecível.\n\nVocê terá as melhores opções para conquistar a atenção dele sem dizer uma palavra, criando memórias que ele jamais vai esquecer.\n\nDeixe sua marca por onde passar. 🌸❤️" },
+    { tag: "BÔNUS 8 ⬇️", img: "images/bonus-playlist.webp", t: "Playlist Mulher Magnética",
+      d: "Transforme sua energia e se coloque em uma frequência magnética.\n\nVocê terá músicas poderosas que irão elevar sua autoestima e atrair toda a atenção dele, fazendo você se sentir irresistível e confiante todos os dias.\n\nSeja a mulher que ele não consegue tirar da cabeça. 🎶✨" },
+    { tag: "BÔNUS 9 ⬇️", img: "images/bonus-presentes.webp", t: "Como Ganhar Presentes Dele",
+      d: "Descubra os segredos para deixar ele tão obcecado por você que vai querer te presentear a todo momento.\n\nVocê aprenderá as melhores estratégias para fazer ele querer te mimar e te surpreender com presentes valiosos, criando uma conexão que vai além do simples desejo.\n\nSeja a mulher que ele adora agradar. 🎁❤️" }
+  ],
+
+  faq: [
+    { q: "➡️ Como vou receber o Guia da Obsessão Inabalável?", a: "Após a confirmação do pagamento, você receberá o guia diretamente no e-mail cadastrado na compra." },
+    { q: "➡️ O Guia da Obsessão Inabalável realmente funciona?", a: "Sim! O guia foi desenvolvido com base em técnicas psicológicas e comportamentais testadas e comprovadas." },
+    { q: "➡️ Tenho garantia caso eu não goste do produto?", a: "Sim! Oferecemos uma garantia de 180 dias. Se você achar que o guia não atendeu às suas expectativas, basta entrar em contato conosco dentro desse prazo para solicitar o reembolso completo, sem burocracia." },
+    { q: "➡️ É difícil aplicar as estratégias do guia?", a: "Não! O material foi desenvolvido para ser prático e acessível, com instruções claras e detalhadas que qualquer mulher pode seguir. Não é necessário ter experiência prévia ou habilidades especiais." }
+  ]
+};
+
+/* =========================================================
+   Lógica do funil (não precisa mexer daqui pra baixo)
+   ========================================================= */
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+
+/* Imagem com fallback de placeholder (mostra o nome do arquivo a preencher) */
+function placeholder(src, ar) {
+  const d = document.createElement("div");
+  d.className = "ph";
+  if (ar) d.style.setProperty("--ar", ar);
+  d.innerHTML = `<b>Imagem aqui</b>${src.split("/").pop()}`;
+  return d;
+}
+function mountImg(img) {
+  const src = img.dataset.src, ar = img.dataset.ar;
+  img.addEventListener("error", () => {
+    if (img.dataset.fallback === "spinner") {
+      const s = document.createElement("div"); s.className = "spinner";
+      img.parentElement.replaceWith(s);
+    } else img.replaceWith(placeholder(src, ar));
+  }, { once: true });
+  img.src = src;
+}
+function makeImg(src, alt, ar) {
+  const i = document.createElement("img");
+  i.dataset.src = src; i.alt = alt || ""; if (ar) i.dataset.ar = ar;
+  mountImg(i); return i;
+}
+
+/* Textos configuráveis */
+$$("[data-cfg]").forEach(el => el.textContent = CONFIG[el.dataset.cfg] ?? "");
+$("#year").textContent = new Date().getFullYear();
+
+/* Link do checkout (+ UTMs) */
+function checkoutLink() {
+  try {
+    const url = new URL(CONFIG.checkoutUrl);
+    if (CONFIG.repassarUTMs) new URLSearchParams(location.search).forEach((v, k) => url.searchParams.set(k, v));
+    return url.toString();
+  } catch { return CONFIG.checkoutUrl; }
+}
+$$(".cta").forEach(a => a.href = checkoutLink());
+
+/* Navegação entre etapas */
+const steps = $$(".step");
+let cur = 0;
+function go(i) {
+  steps[cur].classList.remove("active");
+  cur = Math.min(i, steps.length - 1);
+  steps[cur].classList.add("active");
+  window.scrollTo(0, 0);
+  const name = steps[cur].dataset.step;
+  if (name === "loading") startLoading();
+  if (name === "provas") carousel.start();
+  if (name === "oferta") confetti();
+  steps[cur].querySelectorAll("video").forEach(v => { try { v.currentTime = 0; v.play().catch(() => {}); } catch {} });
+  try { window.fbq && fbq("trackCustom", "Etapa_" + name); } catch {}
+}
+const next = () => go(cur + 1);
+$$("[data-next]").forEach(b => b.addEventListener("click", next));
+
+/* Imagens estáticas */
+$$("img[data-src]").forEach(mountImg);
+
+/* ---------- Confetes ao abrir a oferta ---------- */
+function confetti() {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const c = document.createElement("canvas");
+  c.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999";
+  document.body.appendChild(c);
+  const ctx = c.getContext("2d"), dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const W = c.width = innerWidth * dpr, H = c.height = innerHeight * dpr;
+  const colors = ["#ff0000", "#ff2a3d", "#ffffff", "#b3000f", "#ffd23f", "#9a9a9a"];
+  const parts = [];
+  const burst = (x, dir) => {
+    for (let i = 0; i < 90; i++) parts.push({
+      x, y: H * 0.65, w: (6 + Math.random() * 6) * dpr, h: (8 + Math.random() * 10) * dpr,
+      vx: dir * (4 + Math.random() * 9) * dpr, vy: -(12 + Math.random() * 12) * dpr,
+      r: Math.random() * 6.28, vr: (Math.random() - .5) * .35, c: colors[i % colors.length], o: 1
+    });
+  };
+  burst(0, 1); burst(W, -1);
+  setTimeout(() => { for (let i = 0; i < 80; i++) parts.push({ x: Math.random() * W, y: -20 * dpr, w: 8 * dpr, h: 12 * dpr,
+    vx: (Math.random() - .5) * 3 * dpr, vy: (2 + Math.random() * 3) * dpr, r: Math.random() * 6.28, vr: (Math.random() - .5) * .3,
+    c: colors[i % colors.length], o: 1 }); }, 350);
+  const t0 = performance.now();
+  (function frame(now) {
+    ctx.clearRect(0, 0, W, H);
+    const age = now - t0;
+    parts.forEach(p => {
+      p.vy += .35 * dpr; p.vx *= .99; p.vy *= .99;
+      p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      if (age > 3000) p.o -= .02;
+      ctx.save(); ctx.globalAlpha = Math.max(0, p.o); ctx.translate(p.x, p.y); ctx.rotate(p.r);
+      ctx.fillStyle = p.c; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.r * 2))); ctx.restore();
+    });
+    if (age < 4800) requestAnimationFrame(frame); else c.remove();
+  })(t0);
+}
+
+/* ---------- Quiz ---------- */
+let qi = 0;
+function renderQ() {
+  const total = CONFIG.quiz.length, q = CONFIG.quiz[qi];
+  $("#qCount").textContent = `Pergunta ${qi + 1} de ${total}`;
+  const pct = Math.round(qi / total * 100);
+  $("#qPct").textContent = pct + "%";
+  $("#qBar").style.width = pct + "%";
+  $("#qIntro").style.display = qi === 0 ? "" : "none";
+  $("#qTitle").textContent = q.q;
+  const box = $("#qOpts");
+  box.className = "opts" + (q.type === "img" ? " grid" : "");
+  box.innerHTML = "";
+  q.opts.forEach(o => {
+    const b = document.createElement("button");
+    b.className = "opt" + (q.type === "img" ? " img" : "");
+    if (q.type === "img") {
+      const av = document.createElement("div"); av.className = "avatar";
+      av.appendChild(makeImg(o.img, o.t, "1/1"));
+      b.appendChild(av);
+      const s = document.createElement("span"); s.textContent = o.t; b.appendChild(s);
+    } else b.textContent = o.t;
+    b.addEventListener("click", () => {
+      b.classList.add("sel");
+      setTimeout(() => {
+        qi++;
+        if (qi < total) { renderQ(); window.scrollTo(0, 0); }
+        else { $("#qBar").style.width = "100%"; $("#qPct").textContent = "100%"; next(); }
+      }, 280);
+    });
+    box.appendChild(b);
+  });
+  $("#qTitle").animate([{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"none"}],{duration:350});
+}
+renderQ();
+
+/* ---------- Loading ---------- */
+let loadingStarted = false;
+function startLoading() {
+  if (loadingStarted) return; loadingStarted = true;
+  const msgs = ["Preparando os 12 gatilhos secretos para você...", "Personalizando seu guia...", "Liberando seu acesso..."];
+  const titles = ["Analisando seu perfil...", "Processando...", "Quase lá..."];
+  const dur = CONFIG.loadingSegundos * 1000, t0 = performance.now();
+  (function tick(now) {
+    const p = Math.min(1, (now - t0) / dur);
+    const pct = Math.round(p * 100);
+    $("#loadBar").style.width = pct + "%";
+    $("#loadPct").textContent = pct + "%";
+    const idx = Math.min(msgs.length - 1, Math.floor(p * msgs.length));
+    $("#loadMsg").textContent = msgs[idx];
+    $("#loadTitle").textContent = titles[idx];
+    if (p < 1) requestAnimationFrame(tick); else setTimeout(next, 500);
+  })(t0);
+}
+
+/* ---------- Carrossel de provas ---------- */
+const carousel = (() => {
+  const track = $("#track"), dotsEl = $("#dots"), root = $("#carousel");
+  const n = CONFIG.provas.length;
+  CONFIG.provas.forEach((src, i) => {
+    const s = document.createElement("div"); s.className = "slide";
+    s.appendChild(makeImg(src, "Prova " + (i + 1), "3/4"));
+    track.appendChild(s);
+    const d = document.createElement("i"); dotsEl.appendChild(d);
+  });
+  let idx = 0, timer = null, paused = false, startX = null, dx = 0;
+  const show = i => {
+    idx = (i + n) % n;
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    $$("#dots i").forEach((d, k) => d.classList.toggle("on", k === idx));
+  };
+  const play = () => { clearInterval(timer); if (!paused) timer = setInterval(() => show(idx + 1), 3000); };
+  root.addEventListener("pointerdown", e => { startX = e.clientX; dx = 0; track.style.transition = "none"; });
+  root.addEventListener("pointermove", e => {
+    if (startX === null) return; dx = e.clientX - startX;
+    track.style.transform = `translateX(calc(-${idx * 100}% + ${dx}px))`;
+  });
+  const end = () => {
+    if (startX === null) return;
+    track.style.transition = "";
+    if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+    else { paused = !paused; show(idx); }
+    startX = null; play();
+  };
+  root.addEventListener("pointerup", end);
+  root.addEventListener("pointerleave", end);
+  show(0);
+  return { start: play };
+})();
+
+/* ---------- Depoimentos (prints reais enviados pelas clientes) ---------- */
+CONFIG.depoimentos.forEach((src, i) => {
+  const m = document.createElement("div"); m.className = "media"; m.style.margin = "0 auto 16px";
+  m.appendChild(makeImg(src, "Depoimento " + (i + 1), "3/4"));
+  $("#depoimentos").appendChild(m);
+});
+
+/* ---------- Bônus ---------- */
+CONFIG.bonus.forEach(b => {
+  const el = document.createElement("div"); el.className = "bonus";
+  el.innerHTML = `<span class="tag"></span><div class="bimg"></div><h4></h4><p></p>
+    <div class="val"><s>De ${"R$47,00"}</s> por <b>GRÁTIS</b></div>`;
+  $(".tag", el).textContent = b.tag;
+  $(".bimg", el).appendChild(makeImg(b.img, b.t, "1/1"));
+  $("h4", el).textContent = b.t;
+  $("p", el).textContent = b.d;
+  $("#bonusList").appendChild(el);
+});
+
+/* ---------- FAQ ---------- */
+CONFIG.faq.forEach(f => {
+  const d = document.createElement("details");
+  d.innerHTML = "<summary></summary><p></p>";
+  $("summary", d).textContent = f.q; $("p", d).textContent = f.a;
+  $("#faq").appendChild(d);
+});
+</script>
+</body>
+</html>
