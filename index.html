@@ -257,6 +257,37 @@
   .badges{display:flex;justify-content:center;gap:22px;margin-top:20px;color:var(--gray);font-size:14px;font-weight:700}
   .badges span::before{content:"✔ ";color:var(--red-2)}
   footer{text-align:center;color:var(--gray-2);font-size:12px;margin-top:50px;line-height:1.6}
+
+  /* ---------- Quiz: cada etapa cabe na tela do celular ---------- */
+  .wrap{padding:14px 18px 24px}
+  .brand{margin:0 auto 14px;padding-bottom:10px}
+  .fit h1{font-size:clamp(23px,6.3vw,34px)}
+  .fit h2{font-size:clamp(20px,5.4vw,28px)}
+  .fit p.txt{font-size:16px;line-height:1.45}
+  .fit p.txt + p.txt{margin-top:10px}
+  .fit p.lead{font-size:14px;margin-top:8px}
+  .fit .warn{margin-bottom:10px}
+  .fit .media{margin:14px auto;width:fit-content;max-width:100%}
+  .fit .media.square{aspect-ratio:auto}
+  .fit .media img,.fit .media video{width:auto;max-width:100%;max-height:36vh;max-height:36dvh;margin:0 auto;object-fit:cover}
+  .fit .media.square img{height:auto}
+  .fit .media.round img{max-height:22vh;max-height:22dvh}
+  .fit .btn{margin-top:16px;padding:15px 20px;font-size:17px}
+  .fit .yesno{margin-top:20px}
+  .fit .carousel{margin:12px auto 6px;width:fit-content;max-width:100%}
+  .fit .slide{display:flex;justify-content:center;background:var(--card)}
+  .fit .slide img{width:auto;max-width:100%;max-height:40vh;max-height:40dvh}
+  .fit .dots{margin-top:8px}
+  .fit .loading-gif{width:140px;margin-bottom:16px}
+  .fit .pc-row{margin-top:12px}
+  .fit .pre-price{margin:12px auto}
+  @media (max-height:640px){
+    .fit p.txt{font-size:15px}
+    .fit .media img,.fit .media video{max-height:30vh;max-height:30dvh}
+    .fit .slide img{max-height:36vh;max-height:36dvh}
+    .fit h1{font-size:22px}
+    .fit .btn{margin-top:12px;padding:13px 18px}
+  }
 </style>
 </head>
 <body>
@@ -273,7 +304,7 @@
   </div>
 
   <!-- ===================== 1. HERO ===================== -->
-  <section class="step active" data-step="hero">
+  <section class="step fit active" data-step="hero">
     <h1>Os <span class="hl-box">12 Gatilhos Secretos</span> utilizados por mulheres poderosas que farão qualquer homem ficar <span class="hl-box">obcecado</span> por você...</h1>
     <p class="lead">Mesmo que ele esteja frio, distante ou dizendo que não quer nada sério...</p>
     <div class="media"><img data-src="images/capa-hero.jpg" alt="Casal apaixonado" data-ar="4/5"></div>
@@ -281,7 +312,7 @@
   </section>
 
   <!-- ===================== 2. USE COM CAUTELA ===================== -->
-  <section class="step" data-step="cautela">
+  <section class="step fit" data-step="cautela">
     <div class="warn">USE COM CAUTELA</div>
     <p class="txt">Pois esse é o mesmo <span class="hl">segredo sujo</span> que mulheres comuns estão usando para transformar homens frios e distantes em parceiros <span class="hl">completamente devotados</span>…</p>
     <div class="media small"><img data-src="images/cautela.jpg" alt="Pedido de noivado com rosas" data-ar="800/1067"></div>
@@ -289,28 +320,28 @@
   </section>
 
   <!-- ===================== 3. TRUQUEZINHO ===================== -->
-  <section class="step" data-step="truquezinho">
+  <section class="step fit" data-step="truquezinho">
     <p class="txt">Esse <span class="hl">"truquezinho"</span> faz homens que juravam não querer nada sério mudarem de ideia e <span class="hl">correrem atrás</span>!</p>
     <div class="media small"><img data-src="images/truquezinho.jpg" alt="Conversa: ele sentindo sua falta" data-ar="736/1308"></div>
     <button class="btn" data-next>Continuar</button>
   </section>
 
   <!-- ===================== 4. SEGREDINHO ===================== -->
-  <section class="step" data-step="segredinho">
+  <section class="step fit" data-step="segredinho">
     <p class="txt">Esse <span class="hl">"segredinho"</span> gera uma obsessão tão forte nele, mas tão forte, que em poucos meses ele já está falando em <span class="hl">compromisso sério</span>…</p>
     <div class="media square"><img data-src="images/pagina-4.jpg" alt="Pedido de namoro com flores no restaurante" data-ar="1/1"></div>
     <button class="btn" data-next>Continuar</button>
   </section>
 
   <!-- ===================== 5. RESULTADO ===================== -->
-  <section class="step" data-step="resultado">
+  <section class="step fit" data-step="resultado">
     <p class="txt">E o melhor: <span class="hl">sem joguinhos</span>, sem se humilhar e sem correr atrás. <span class="hl">ELE</span> é quem passa a ter medo de te perder!</p>
     <div class="media square"><img data-src="images/pagina-5.jpg" alt="Casal abraçado com flores" data-ar="1/1"></div>
     <button class="btn" data-next>Continuar</button>
   </section>
 
   <!-- ===================== 6. DECISÃO SIM/NÃO ===================== -->
-  <section class="step" data-step="decisao1">
+  <section class="step fit" data-step="decisao1">
     <h2>Você gostaria de conhecer o truque para deixar qualquer homem <span class="hl">OBCECADO</span> por você?</h2>
     <div class="yesno">
       <button class="yes" data-next>SIM</button>
@@ -319,7 +350,7 @@
   </section>
 
   <!-- ===================== 7. ESPECIALISTA ===================== -->
-  <section class="step" data-step="especialista">
+  <section class="step fit" data-step="especialista">
     <h2>Então vamos lá !!</h2>
     <div class="media round" style="max-width:280px"><img data-src="images/especialista.webp" alt="Especialista" data-ar="1/1"></div>
     <p class="txt">Eu me chamo <span class="hl" data-cfg="especialistaNome"></span>, sou <span class="hl" data-cfg="especialistaCargo1"></span> e <span class="hl" data-cfg="especialistaCargo2"></span>…</p>
@@ -328,7 +359,7 @@
   </section>
 
   <!-- ===================== 7b. PREÇO ANTECIPADO ===================== -->
-  <section class="step preco" data-step="preco">
+  <section class="step fit preco" data-step="preco">
     <h2>Quanto vale ver ele <span class="hl">correndo atrás de você</span>?</h2>
     <div class="pc-row">
       <div class="pc-img"><img data-src="images/produto-principal.webp" alt="Guia da Obsessão Inabalável" data-ar="1/1"></div>
@@ -348,7 +379,7 @@
   </section>
 
   <!-- ===================== 8. INVESTIGAÇÃO ===================== -->
-  <section class="step" data-step="investigacao">
+  <section class="step fit" data-step="investigacao">
     <p class="txt">Recentemente resolvi investigar a fundo a <span class="hl">psicologia por trás</span> dos relacionamentos em que o homem fica tão <span class="hl">obcecado</span>, que muda completamente de comportamento em poucas semanas.</p>
     <div class="media"><img data-src="images/psicologia.jpg" alt="A psicologia da paixão no cérebro" data-ar="768/574"></div>
     <p class="txt">Depois de <span class="hl">6 meses estudando</span> esses casos, foi que eu descobri o <span class="hl">segredinho sujo</span> que gera essa <span class="hl">Obsessão</span>.</p>
@@ -356,7 +387,7 @@
   </section>
 
   <!-- ===================== 9. SEGREDINHO SUJO ===================== -->
-  <section class="step" data-step="gatilhos">
+  <section class="step fit" data-step="gatilhos">
     <div class="media video"><video src="images/cerebro.mp4" poster="images/cerebro-poster.jpg" autoplay muted loop playsinline preload="auto"></video></div>
     <p class="txt">Ao estudar tudo o que essas mulheres faziam, eu encontrei <span class="hl">12 gatilhos da obsessão</span> que elas ativavam (e ainda ativam) neles… Esses gatilhos são ativados através de <span class="hl">ações, gestos, falas e mensagens específicas</span>!</p>
     <p class="txt">E esses <span class="hl">12 gatilhos</span> irão funcionar pra você, mesmo que você não tenha o corpo de uma modelo… Ou não se ache muito bonita…</p>
@@ -364,7 +395,7 @@
   </section>
 
   <!-- ===================== 10. CARROSSEL DE PROVAS ===================== -->
-  <section class="step" data-step="provas">
+  <section class="step fit" data-step="provas">
     <p class="txt">E a prova disso são as mulheres, que quando começaram a aplicar o passo a passo do <span class="hl">Guia da Obsessão Inabalável</span>, me mandaram fotos como essas… 👇</p>
     <div class="carousel" id="carousel"><div class="track" id="track"></div></div>
     <div class="dots" id="dots"></div>
@@ -373,7 +404,7 @@
   </section>
 
   <!-- ===================== 11. SEGREDO SIM/NÃO ===================== -->
-  <section class="step" data-step="segredo">
+  <section class="step fit" data-step="segredo">
     <h2>Você se compromete a manter em <span class="hl">segredo</span> as informações da próxima etapa?</h2>
     <div class="yesno">
       <button class="yes" data-next>SIM</button>
@@ -382,7 +413,7 @@
   </section>
 
   <!-- ===================== 12. QUIZ ===================== -->
-  <section class="step" data-step="quiz">
+  <section class="step fit" data-step="quiz">
     <div class="progress-head"><span id="qCount">Pergunta 1 de 5</span><span id="qPct">0%</span></div>
     <div class="progress"><span id="qBar"></span></div>
     <p class="q-intro" id="qIntro">Responda rapidinho para eu identificar quais gatilhos funcionam melhor para o seu perfil.</p>
@@ -391,7 +422,7 @@
   </section>
 
   <!-- ===================== 13. LOADING ===================== -->
-  <section class="step" data-step="loading">
+  <section class="step fit" data-step="loading">
     <div class="loading-gif"><img data-src="images/loading-run.gif" alt="Carregando" data-ar="1/1" data-fallback="spinner"></div>
     <h2 id="loadTitle">Analisando seu perfil...</h2>
     <p class="lead">Você está prestes a descobrir como se tornar a mulher que ele não consegue tirar da cabeça</p>
