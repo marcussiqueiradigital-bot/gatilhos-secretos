@@ -245,7 +245,7 @@
 
   <!-- ===================== 1. HERO ===================== -->
   <section class="step active" data-step="hero">
-    <h1>Os <span class="hl-box">12 Gatilhos Secretos</span> utilizado por mulheres poderosas que fará qualquer homem ficar <span class="hl-box">obcecado</span> por você...</h1>
+    <h1>Os <span class="hl-box">12 Gatilhos Secretos</span> utilizados por mulheres poderosas que farão qualquer homem ficar <span class="hl-box">obcecado</span> por você...</h1>
     <p class="lead">Mesmo que ele esteja frio, distante ou dizendo que não quer nada sério...</p>
     <div class="media"><img data-src="images/capa-hero.jpg" alt="Casal apaixonado" data-ar="4/5"></div>
     <button class="btn" data-next>Continuar</button>
@@ -295,6 +295,14 @@
     <div class="media round" style="max-width:280px"><img data-src="images/especialista.webp" alt="Especialista" data-ar="1/1"></div>
     <p class="txt">Eu me chamo <span class="hl" data-cfg="especialistaNome"></span>, sou <span class="hl" data-cfg="especialistaCargo1"></span> e <span class="hl" data-cfg="especialistaCargo2"></span>…</p>
     <p class="txt">E já ajudei mais de <span class="hl" data-cfg="mulheresAjudadas"></span> a conquistarem e reconquistarem seus parceiros.</p>
+    <button class="btn" data-next>Continuar</button>
+  </section>
+
+  <!-- ===================== 7b. PREÇO ANTECIPADO ===================== -->
+  <section class="step" data-step="preco">
+    <p class="txt">Reuni tudo isso no <span class="hl">Guia da Obsessão Inabalável</span>.</p>
+    <p class="txt">Hoje ele está saindo por apenas <span class="hl" style="font-weight:900" data-cfg="precoAVista"></span> (ou <span data-cfg="parcelado"></span>), menos que um lanche.</p>
+    <p class="txt">Continue que eu vou te mostrar como ele funciona no seu caso.</p>
     <button class="btn" data-next>Continuar</button>
   </section>
 
@@ -354,7 +362,10 @@
   <!-- ===================== 14. OFERTA FINAL ===================== -->
   <section class="step" data-step="oferta">
     <div class="congrats">🎉 PARABÉNS</div>
-    <p class="lead" style="font-size:17px;color:#d8d8d8">Se você chegou até aqui, considere-se uma mulher de sorte. Somente <span class="hl" style="font-weight:900">57 entre 1000 mulheres</span> terão acesso ao conteúdo polêmico que você vai ver aqui.</p>
+    <p class="lead" style="font-size:17px;color:#d8d8d8"><b style="color:#fff">Seu plano está pronto.</b> Com base no seu perfil, os <span class="hl" style="font-weight:900">12 Gatilhos + 9 bônus</span> são exatamente o que você precisa.</p>
+    <p class="lead" style="font-size:17px;color:#d8d8d8">Hoje sai por <span class="hl" style="font-weight:900" data-cfg="precoAVista"></span> à vista ou <span data-cfg="parcelado"></span>.</p>
+    <a class="btn cta" href="#" target="_blank" rel="noopener noreferrer">🔥 Quero obter os 12 gatilhos</a>
+    <p class="trust">Pagamento único · PIX ou cartão em até 8x · Compra segura</p>
 
     <div class="ba">
       <div><div class="pic"><img data-src="images/mulher-triste.svg" alt="Antes - situação atual" data-ar="1/1"></div></div>
@@ -375,19 +386,19 @@
     <div class="price-box">
       <div class="prod"><img data-src="images/produto-oferta.webp" alt="Guia da Obsessão Inabalável + 9 Bônus" data-ar="1/1"></div>
       <h3>GUIA DA OBSESSÃO INABALÁVEL</h3>
-      <div class="plus">+ 9 BÔNUS EXCLUSIVOS GRÁTIS</div>
+      <div class="plus">+ 9 BÔNUS EXCLUSIVOS INCLUSOS</div>
       <div class="old">De: <span data-cfg="precoDe"></span></div>
       <div class="por">por apenas:</div>
       <div class="big" data-cfg="parcelado"></div>
       <div class="avista">ou <span data-cfg="precoAVista"></span> à vista</div>
       <a class="btn cta" href="#" target="_blank" rel="noopener noreferrer">🔥 Quero obter os 12 gatilhos</a>
-      <p class="trust">Satisfação Garantida - Compra Segura - Privacidade Protegida</p>
+      <p class="trust">Pagamento único · PIX ou cartão em até 8x · Compra segura</p>
     </div>
 
     <div class="bonus-head">🎁 TUDO ISSO VAI SER SEU!</div>
     <div id="bonusList"></div>
     <a class="btn cta" href="#" target="_blank" rel="noopener noreferrer">🔥 Quero obter os 12 gatilhos</a>
-    <p class="trust">Satisfação Garantida - Compra Segura - Privacidade Protegida</p>
+    <p class="trust">Pagamento único · PIX ou cartão em até 8x · Compra segura</p>
 
     <div class="section-title">Perguntas Frequentes</div>
     <div class="faq" id="faq"></div>
@@ -678,7 +689,7 @@ CONFIG.depoimentos.forEach((src, i) => {
 CONFIG.bonus.forEach(b => {
   const el = document.createElement("div"); el.className = "bonus";
   el.innerHTML = `<span class="tag"></span><div class="bimg"></div><h4></h4><p></p>
-    <div class="val"><s>De ${"R$47,00"}</s> por <b>GRÁTIS</b></div>`;
+    <div class="val"><s>De ${"R$47,00"}</s> · <b>Incluso no seu pacote de hoje</b></div>`;
   $(".tag", el).textContent = b.tag;
   $(".bimg", el).appendChild(makeImg(b.img, b.t, "1/1"));
   $("h4", el).textContent = b.t;
