@@ -206,17 +206,6 @@
   .ba .pic .ph{--ar:1/1;height:100%}
   .ba .pic.after{border-color:var(--red);box-shadow:0 0 24px var(--red-glow)}
   .section-title{font-size:22px;font-weight:900;text-align:center;margin:46px 0 18px}
-  .preco h2{font-size:clamp(20px,5.2vw,26px)}
-  .pc-row{display:flex;align-items:center;gap:12px;margin:18px auto 0;max-width:440px}
-  .pc-img{width:110px;flex:none;border-radius:10px;overflow:hidden}
-  .checks{list-style:none;padding:0;margin:0;flex:1;text-align:left}
-  .checks li{position:relative;padding:7px 8px 7px 28px;margin-bottom:6px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:8px;font-size:13.5px;line-height:1.3}
-  .checks li::before{content:"✔";position:absolute;left:9px;top:7px;color:var(--red-2);font-weight:900}
-  .pre-price{margin:16px auto;max-width:440px;padding:12px;border:1px solid var(--red);border-radius:var(--radius);background:rgba(229,9,20,.08);box-shadow:0 0 20px var(--red-glow);text-align:center}
-  .pre-price .old{margin-top:0;font-size:13px}
-  .pre-price .big{font-size:clamp(28px,8vw,36px)}
-  .pre-price .avista{font-size:13px}
-  .calm{font-size:14.5px;line-height:1.45;text-align:center;color:#cfcfcf;margin:0 auto 4px;max-width:440px}
   .price-box{
     margin:34px auto 0;max-width:440px;background:linear-gradient(180deg,#141414,#0e0e0e);
     border:2px solid var(--red);border-radius:18px;padding:26px 20px;text-align:center;
@@ -279,8 +268,6 @@
   .fit .slide img{width:auto;max-width:100%;max-height:40vh;max-height:40dvh}
   .fit .dots{margin-top:8px}
   .fit .loading-gif{width:140px;margin-bottom:16px}
-  .fit .pc-row{margin-top:12px}
-  .fit .pre-price{margin:12px auto}
   @media (max-height:640px){
     .fit p.txt{font-size:15px}
     .fit .media img,.fit .media video{max-height:30vh;max-height:30dvh}
@@ -292,6 +279,46 @@
   .fit[data-step=truquezinho] .media img,.fit[data-step=segredinho] .media img,.fit[data-step=resultado] .media img{max-height:52vh;max-height:52dvh}
   @media (max-height:640px){
     .fit[data-step=truquezinho] .media img,.fit[data-step=segredinho] .media img,.fit[data-step=resultado] .media img{max-height:46vh;max-height:46dvh}
+  }
+  /* botão Continuar sempre na mesma posição (rodapé da tela) */
+  .wrap{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+  .step.fit.active{display:flex;flex-direction:column;flex:1}
+  .fit > .btn{margin-top:auto}
+  .fit > .media,.fit > .carousel{margin-bottom:16px}
+  .fit .media img,.fit .media video{max-height:44vh;max-height:44dvh}
+  .fit .media.round{max-width:none!important}
+  .fit .media.round img{max-height:34vh;max-height:34dvh}
+  .fit .slide img{max-height:50vh;max-height:50dvh}
+  .fit[data-step=truquezinho] .media img,.fit[data-step=segredinho] .media img,.fit[data-step=resultado] .media img{max-height:52vh;max-height:52dvh}
+  @media (max-height:640px){
+    .fit .media img,.fit .media video{max-height:36vh;max-height:36dvh}
+    .fit .media.round img{max-height:28vh;max-height:28dvh}
+    .fit .slide img{max-height:42vh;max-height:42dvh}
+    .fit[data-step=truquezinho] .media img,.fit[data-step=segredinho] .media img,.fit[data-step=resultado] .media img{max-height:46vh;max-height:46dvh}
+  }
+  /* ajuste fino: fotos preenchendo o espaço até o botão */
+  .fit[data-step=hero] .media img{max-height:48vh;max-height:48dvh}
+  .fit[data-step=truquezinho] .media img,.fit[data-step=resultado] .media img{max-height:61vh;max-height:61dvh}
+  .fit[data-step=segredinho] .media img{max-height:57vh;max-height:57dvh}
+  .fit[data-step=especialista] .media.round img{max-height:41vh;max-height:41dvh}
+  .fit[data-step=gatilhos] .media video{max-height:52vh;max-height:52dvh}
+  .fit[data-step=cautela] .media img{max-height:45vh;max-height:45dvh}
+  @media (max-height:640px){
+    .fit[data-step=cautela] .media img{max-height:38vh;max-height:38dvh}
+    .fit[data-step=truquezinho] .media img{max-height:56vh;max-height:56dvh}
+    .fit[data-step=especialista] .media.round img{max-height:36vh;max-height:36dvh}
+    .fit[data-step=hero] .media img{max-height:40vh;max-height:40dvh}
+  }
+  @media (max-height:580px){
+    .wrap{padding-top:10px}
+    .brand{margin-bottom:10px;padding-bottom:8px}
+    .brand svg{width:32px;height:32px}
+    .fit h1{font-size:20px}
+    .fit p.txt{font-size:14.5px;line-height:1.4}
+    .fit .media img,.fit .media video,.fit[data-step=cautela] .media img,.fit[data-step=hero] .media img{max-height:32vh;max-height:32dvh}
+    .fit[data-step=truquezinho] .media img,.fit[data-step=segredinho] .media img,.fit[data-step=resultado] .media img{max-height:48vh;max-height:48dvh}
+    .fit[data-step=especialista] .media.round img{max-height:30vh;max-height:30dvh}
+    .fit .slide img{max-height:40vh;max-height:40dvh}
   }
 </style>
 </head>
@@ -361,26 +388,6 @@
     <p class="txt">Eu me chamo <span class="hl" data-cfg="especialistaNome"></span>, sou <span class="hl" data-cfg="especialistaCargo1"></span> e <span class="hl" data-cfg="especialistaCargo2"></span>…</p>
     <p class="txt">E já ajudei mais de <span class="hl" data-cfg="mulheresAjudadas"></span> a conquistarem e reconquistarem seus parceiros.</p>
     <button class="btn" data-next>Continuar</button>
-  </section>
-
-  <!-- ===================== 7b. PREÇO ANTECIPADO ===================== -->
-  <section class="step fit preco" data-step="preco">
-    <h2>Quanto vale ver ele <span class="hl">correndo atrás de você</span>?</h2>
-    <div class="pc-row">
-      <div class="pc-img"><img data-src="images/produto-principal.webp" alt="Guia da Obsessão Inabalável" data-ar="1/1"></div>
-      <ul class="checks">
-        <li>Os <b>12 gatilhos</b> passo a passo</li>
-        <li>As <b>frases exatas</b> para usar com ele</li>
-        <li><b>+ 9 bônus</b> inclusos</li>
-      </ul>
-    </div>
-    <div class="pre-price">
-      <div class="old">De <span data-cfg="precoDe"></span></div>
-      <div class="big" data-cfg="parcelado"></div>
-      <div class="avista">ou <span data-cfg="precoAVista"></span> à vista · menos que um lanche</div>
-    </div>
-    <p class="calm">Mas calma, você <b>não precisa decidir agora</b> 😉 Antes vou te mostrar <span class="hl">quais gatilhos funcionam no seu caso</span>.</p>
-    <button class="btn" data-next>Quero ver meu resultado →</button>
   </section>
 
   <!-- ===================== 8. INVESTIGAÇÃO ===================== -->
