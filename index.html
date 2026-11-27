@@ -618,6 +618,38 @@ function checkoutLink() {
 }
 $$(".cta").forEach(a => a.href = checkoutLink());
 
+/* ---------- Rastreamento para o painel (Supabase) ---------- */
+const TRK = {
+  url: "https://xctiourbcydfzimleaws.supabase.co/rest/v1/quiz_gatilhos_eventos",
+  key: "sb_publishable_qNgEj3lEUsmW9-0DvMbxLQ_HIUqc-c9"   // chave pública: só permite inserir eventos
+};
+const trk = (() => {
+  let sid;
+  try {
+    sid = sessionStorage.getItem("qg_sid");
+    if (!sid) { sid = (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Date.now().toString(36)); sessionStorage.setItem("qg_sid", sid); }
+  } catch { sid = Math.random().toString(36).slice(2) + Date.now().toString(36); }
+  const u = new URLSearchParams(location.search);
+  const cut = (v, n) => (v || "").slice(0, n) || null;
+  const base = {
+    sessao: sid,
+    utm_source: cut(u.get("utm_source"), 120),
+    utm_campaign: cut(u.get("utm_campaign"), 200),
+    utm_content: cut(u.get("utm_content"), 200),
+    dispositivo: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? "celular" : "computador"
+  };
+  return (evento, extra = {}) => {
+    try {
+      fetch(TRK.url, {
+        method: "POST", keepalive: true,
+        headers: { apikey: TRK.key, "Content-Type": "application/json", Prefer: "return=minimal" },
+        body: JSON.stringify({ ...base, evento, ...extra })
+      }).catch(() => {});
+    } catch {}
+  };
+})();
+$$(".cta").forEach(a => a.addEventListener("click", () => trk("checkout", { etapa: "oferta" })));
+
 /* Navegação entre etapas */
 const steps = $$(".step");
 let cur = 0;
@@ -632,8 +664,11 @@ function go(i) {
   if (name === "oferta") confetti();
   steps[cur].querySelectorAll("video").forEach(v => { try { v.currentTime = 0; v.play().catch(() => {}); } catch {} });
   try { window.fbq && fbq("trackCustom", "Etapa_" + name); } catch {}
+  trk("etapa", { etapa: name });
 }
 const next = () => go(cur + 1);
+trk("etapa", { etapa: steps[0].dataset.step });
+setInterval(() => { if (document.visibilityState === "visible") trk("ping", { etapa: steps[cur].dataset.step }); }, 25000);
 $$("[data-next]").forEach(b => b.addEventListener("click", next));
 
 /* Imagens estáticas */
@@ -698,6 +733,8 @@ function renderQ() {
       const s = document.createElement("span"); s.textContent = o.t; b.appendChild(s);
     } else b.textContent = o.t;
     b.addEventListener("click", () => {
+      if (b.classList.contains("sel")) return;
+      trk("resposta", { etapa: "quiz", pergunta: qi + 1, resposta: o.t.slice(0, 120) });
       b.classList.add("sel");
       setTimeout(() => {
         qi++;
