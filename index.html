@@ -288,6 +288,11 @@
     .fit h1{font-size:22px}
     .fit .btn{margin-top:12px;padding:13px 18px}
   }
+  /* fotos maiores nas telas de texto curto */
+  .fit[data-step=truquezinho] .media img,.fit[data-step=segredinho] .media img,.fit[data-step=resultado] .media img{max-height:52vh;max-height:52dvh}
+  @media (max-height:640px){
+    .fit[data-step=truquezinho] .media img,.fit[data-step=segredinho] .media img,.fit[data-step=resultado] .media img{max-height:46vh;max-height:46dvh}
+  }
 </style>
 </head>
 <body>
