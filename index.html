@@ -206,11 +206,17 @@
   .ba .pic .ph{--ar:1/1;height:100%}
   .ba .pic.after{border-color:var(--red);box-shadow:0 0 24px var(--red-glow)}
   .section-title{font-size:22px;font-weight:900;text-align:center;margin:46px 0 18px}
-  .checks{list-style:none;padding:0;margin:18px auto;max-width:420px;text-align:left}
-  .checks li{position:relative;padding:10px 12px 10px 40px;margin-bottom:8px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;font-size:15px}
-  .checks li::before{content:"✔";position:absolute;left:14px;top:9px;color:var(--red-2);font-weight:900}
-  .pre-price{margin:22px auto;max-width:420px;padding:18px 14px;border:1px solid var(--red);border-radius:var(--radius);background:rgba(229,9,20,.08);box-shadow:0 0 24px var(--red-glow);text-align:center}
-  .pre-price .old{margin-top:0}
+  .preco h2{font-size:clamp(20px,5.2vw,26px)}
+  .pc-row{display:flex;align-items:center;gap:12px;margin:18px auto 0;max-width:440px}
+  .pc-img{width:110px;flex:none;border-radius:10px;overflow:hidden}
+  .checks{list-style:none;padding:0;margin:0;flex:1;text-align:left}
+  .checks li{position:relative;padding:7px 8px 7px 28px;margin-bottom:6px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:8px;font-size:13.5px;line-height:1.3}
+  .checks li::before{content:"✔";position:absolute;left:9px;top:7px;color:var(--red-2);font-weight:900}
+  .pre-price{margin:16px auto;max-width:440px;padding:12px;border:1px solid var(--red);border-radius:var(--radius);background:rgba(229,9,20,.08);box-shadow:0 0 20px var(--red-glow);text-align:center}
+  .pre-price .old{margin-top:0;font-size:13px}
+  .pre-price .big{font-size:clamp(28px,8vw,36px)}
+  .pre-price .avista{font-size:13px}
+  .calm{font-size:14.5px;line-height:1.45;text-align:center;color:#cfcfcf;margin:0 auto 4px;max-width:440px}
   .price-box{
     margin:34px auto 0;max-width:440px;background:linear-gradient(180deg,#141414,#0e0e0e);
     border:2px solid var(--red);border-radius:18px;padding:26px 20px;text-align:center;
@@ -322,23 +328,22 @@
   </section>
 
   <!-- ===================== 7b. PREÇO ANTECIPADO ===================== -->
-  <section class="step" data-step="preco">
+  <section class="step preco" data-step="preco">
     <h2>Quanto vale ver ele <span class="hl">correndo atrás de você</span>?</h2>
-    <p class="txt">Pensa comigo: quanto você já gastou de <span class="hl">tempo, lágrimas e noites sem dormir</span> esperando ele mudar sozinho?</p>
-    <div class="media square fit"><img data-src="images/produto-principal.webp" alt="Guia da Obsessão Inabalável" data-ar="1/1"></div>
-    <p class="txt">Tudo o que eu descobri em <span class="hl">6 meses de estudo</span> está reunido no <span class="hl">Guia da Obsessão Inabalável</span>:</p>
-    <ul class="checks">
-      <li>Os <b>12 gatilhos</b> explicados passo a passo</li>
-      <li>As <b>frases e mensagens exatas</b> para usar com ele</li>
-      <li><b>+ 9 bônus</b> para manter ele aos seus pés</li>
-    </ul>
+    <div class="pc-row">
+      <div class="pc-img"><img data-src="images/produto-principal.webp" alt="Guia da Obsessão Inabalável" data-ar="1/1"></div>
+      <ul class="checks">
+        <li>Os <b>12 gatilhos</b> passo a passo</li>
+        <li>As <b>frases exatas</b> para usar com ele</li>
+        <li><b>+ 9 bônus</b> inclusos</li>
+      </ul>
+    </div>
     <div class="pre-price">
       <div class="old">De <span data-cfg="precoDe"></span></div>
-      <div class="por">hoje por menos que um lanche:</div>
       <div class="big" data-cfg="parcelado"></div>
-      <div class="avista">ou <span data-cfg="precoAVista"></span> à vista</div>
+      <div class="avista">ou <span data-cfg="precoAVista"></span> à vista · menos que um lanche</div>
     </div>
-    <p class="txt" style="color:#cfcfcf">Mas calma, você <b>não precisa decidir agora</b> 😉<br>Antes, eu vou analisar o seu perfil e te mostrar <span class="hl">quais gatilhos funcionam no seu caso</span>.</p>
+    <p class="calm">Mas calma, você <b>não precisa decidir agora</b> 😉 Antes vou te mostrar <span class="hl">quais gatilhos funcionam no seu caso</span>.</p>
     <button class="btn" data-next>Quero ver meu resultado →</button>
   </section>
 
