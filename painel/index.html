@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Painel do Quiz – Gatilhos Secretos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 43 C10 33 3 25 3 16 A10.5 10.5 0 0 1 24 10.5 A10.5 10.5 0 0 1 45 16 C45 25 38 33 24 43Z' fill='%23e50914'/%3E%3C/svg%3E">
+<style>
+  html,body{margin:0;background:#0a0909}
+  .qp{--qp-bg:#0a0909;--qp-card:#141111;--qp-card2:#1b1515;--qp-line:#2a2222;--qp-text:#f4f4f4;--qp-gray:#9a9a9a;--qp-gray2:#6b6b6b;--qp-red:#e50914;--qp-red2:#ff2a3d;--qp-glow:rgba(229,9,20,.45);--qp-green:#2fbf71;
+    font-family:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--qp-text);font-variant-numeric:tabular-nums;
+    background:radial-gradient(ellipse at 50% 0%,rgba(229,9,20,.20) 0%,transparent 55%),var(--qp-bg);min-height:100vh}
+  .qp *{box-sizing:border-box}
+  .qp-nav{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(16px,4vw,40px);background:rgba(10,9,9,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--qp-line)}
+  .qp-brand{display:flex;align-items:center;gap:10px}
+  .qp-brand svg{width:34px;height:34px;filter:drop-shadow(0 0 10px var(--qp-glow))}
+  .qp-bt{display:flex;flex-direction:column;line-height:1}
+  .qp-b1{font-size:9px;font-weight:800;letter-spacing:3px;color:var(--qp-gray)}
+  .qp-b2{font-size:16px;font-weight:900;letter-spacing:1.3px;color:#fff;margin-top:3px}
+  .qp-b3{font-size:11.5px;font-weight:900;letter-spacing:3.2px;color:var(--qp-red2);margin-top:2px;text-shadow:0 0 10px var(--qp-glow)}
+  .qp-nav-right{display:flex;align-items:center;gap:10px}
+  .qp-tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--qp-gray);text-transform:uppercase}
+  .qp select.dash-select{appearance:auto;padding:6px 10px;font-size:14px;background-color:var(--qp-card2);color:#fff;border:1px solid var(--qp-line);border-radius:10px;font-family:inherit;font-weight:800}
+  .qp-main{max-width:1180px;margin:0 auto;padding:clamp(20px,4vw,44px) clamp(16px,4vw,40px) 60px;display:flex;flex-direction:column;gap:22px}
+  .qp-hero{text-align:center;padding:6px 0 4px}
+  .qp-title{font-size:clamp(28px,5.5vw,44px);font-weight:900;margin:0;letter-spacing:-.5px;text-shadow:0 0 26px var(--qp-glow)}
+  .qp-title span{color:var(--qp-red2)}
+  .qp-lede{margin:12px auto 0;color:#cfcfcf;font-size:16px;font-weight:700;line-height:1.55;max-width:62ch}
+  .qp-lede b{color:var(--qp-red2);font-weight:900}
+  .qp-card{background:linear-gradient(180deg,var(--qp-card2),var(--qp-card));border:1px solid var(--qp-line);border-radius:16px;padding:clamp(16px,2.6vw,24px);box-shadow:0 10px 40px rgba(0,0,0,.45)}
+  .qp-h2{font-size:19px;font-weight:900;margin:0 0 4px;letter-spacing:.2px}
+  .qp-h2 span{color:var(--qp-red2)}
+  .qp-sub{color:var(--qp-gray);font-size:13px;font-weight:600;margin:0 0 16px}
+  .qp-live{border-color:var(--qp-red);box-shadow:0 0 0 1px rgba(229,9,20,.25),0 0 40px rgba(229,9,20,.25)}
+  .qp-live-grid{display:grid;grid-template-columns:minmax(170px,240px) 1fr;gap:22px;align-items:center}
+  @media (max-width:600px){.qp-live-grid{grid-template-columns:1fr}}
+  .qp-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(229,9,20,.15);color:var(--qp-red2);border:1px solid rgba(229,9,20,.5);border-radius:999px;padding:3px 10px;font-size:11px;font-weight:900;letter-spacing:1.5px;margin-bottom:10px}
+  .qp-dot{width:9px;height:9px;border-radius:50%;background:var(--qp-red2);flex:none}
+  @media (prefers-reduced-motion:no-preference){.qp-dot{animation:qpPulse 1.4s ease-out infinite}}
+  @keyframes qpPulse{0%{box-shadow:0 0 0 0 rgba(255,42,61,.7)}100%{box-shadow:0 0 0 10px rgba(255,42,61,0)}}
+  .qp-live-num{display:flex;align-items:baseline;gap:10px}
+  .qp-big{font-size:64px;font-weight:900;line-height:1;color:#fff;text-shadow:0 0 24px var(--qp-glow)}
+  .qp-muted{color:var(--qp-gray);font-size:13px;font-weight:700}
+  .qp-where{display:flex;flex-wrap:wrap;gap:8px}
+  .qp-chip{background:rgba(255,255,255,.04);border:1px solid var(--qp-line);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700}
+  .qp-chip b{color:var(--qp-red2);font-weight:900}
+  .qp-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  @media (max-width:520px){.qp-k-val{font-size:32px}.qp-k-label{font-size:11px;letter-spacing:.8px}}
+  .qp-kpi{position:relative;overflow:hidden}
+  .qp-kpi::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--qp-red2),var(--qp-red))}
+  .qp-k-label{color:var(--qp-gray);font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;margin:0 0 8px}
+  .qp-k-val{font-size:40px;font-weight:900;line-height:1.05;color:#fff}
+  .qp-k-note{color:var(--qp-gray);font-size:13px;font-weight:700;margin-top:8px}
+  .qp-k-note span{color:var(--qp-red2);font-weight:900}
+  .qp-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px}
+  .qp-bars{display:flex;flex-direction:column;gap:8px;min-height:120px}
+  .qp-bar{display:grid;grid-template-columns:minmax(110px,40%) 1fr auto;gap:10px;align-items:center;font-size:13px;font-weight:700}
+  .qp-bar-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#dcdcdc}
+  .qp-bar-track{height:14px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden}
+  .qp-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--qp-red),var(--qp-red2));box-shadow:0 0 12px rgba(229,9,20,.45)}
+  .qp-bar-val{white-space:nowrap;min-width:86px;text-align:right;color:#fff}
+  .qp-bar.is-drop .qp-bar-label{color:var(--qp-red2);font-weight:900}
+  .qp-q{margin-bottom:18px}
+  .qp-q-title{font-size:14px;font-weight:900;margin:0 0 8px;color:#fff}
+  .qp-callout{background:rgba(229,9,20,.10);border:1px solid rgba(229,9,20,.45);border-radius:12px;padding:10px 14px;margin:0 0 16px;font-size:14px;font-weight:700;color:#e6e6e6}
+  .qp-callout b{color:var(--qp-red2);font-weight:900}
+  .qp-table-wrap{overflow-x:auto}
+  .qp-table{width:100%;border-collapse:collapse;font-size:13px;font-weight:700}
+  .qp-table th,.qp-table td{padding:10px 12px;border-bottom:1px solid var(--qp-line);text-align:right;white-space:nowrap}
+  .qp-table th:first-child,.qp-table td:first-child,.qp-table th:nth-child(2),.qp-table td:nth-child(2){text-align:left}
+  .qp-table th{color:var(--qp-gray);font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:800}
+  .qp-table tbody tr:hover td{background:rgba(229,9,20,.06)}
+  .qp-chart{position:relative;min-height:230px}
+  .qp-chart text{fill:var(--qp-gray);font-size:12px;font-family:inherit;font-weight:700}
+  .qp-tip{position:absolute;pointer-events:none;background:#1e1e1e;border:1px solid var(--qp-red);box-shadow:0 8px 24px rgba(0,0,0,.6);border-radius:8px;padding:7px 10px;font-size:12px;font-weight:700;white-space:nowrap;color:#fff}
+  .qp-empty{color:var(--qp-gray);font-size:13px;font-weight:700;padding:14px 0}
+  .qp-err{color:var(--qp-red2);font-size:13px;font-weight:700;padding:14px 0}
+  .qp details{font-size:13px;color:var(--qp-gray);font-weight:600}
+  .qp summary{cursor:pointer;color:#cfcfcf;font-weight:800}
+  .qp details li{margin:6px 0}
+  .qp details b{color:#fff}
+  .qp-foot{text-align:center;color:var(--qp-gray2);font-size:12px;font-weight:700;padding:10px 0 0;border-top:1px solid var(--qp-line)}
+
+  .qp-login{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(ellipse at 50% 0%,rgba(229,9,20,.25),transparent 60%),#0a0909;font-family:"Nunito",system-ui,sans-serif;color:#fff}
+  .qp-login form{width:100%;max-width:360px;background:linear-gradient(180deg,#1b1515,#141111);border:1px solid #2a2222;border-radius:18px;padding:28px 24px;text-align:center;box-shadow:0 0 40px rgba(229,9,20,.2)}
+  .qp-login h2{margin:14px 0 6px;font-size:22px;font-weight:900}
+  .qp-login p{margin:0 0 18px;color:#9a9a9a;font-size:14px;font-weight:700}
+  .qp-login input{width:100%;box-sizing:border-box;padding:14px;border-radius:12px;border:1px solid #2a2222;background:#0f0c0c;color:#fff;font-size:16px;font-family:inherit;font-weight:700;text-align:center}
+  .qp-login button{width:100%;margin-top:12px;padding:14px;border:none;border-radius:12px;background:linear-gradient(180deg,#ff2a3d,#e50914);color:#fff;font-weight:900;font-size:16px;font-family:inherit;letter-spacing:.5px;cursor:pointer;box-shadow:0 10px 30px rgba(229,9,20,.35)}
+  .qp-login .erro{color:#ff2a3d;font-size:13px;font-weight:800;min-height:18px;margin-top:10px}
+  .qp-login[hidden]{display:none}
+  @media (max-width:520px){.qp-tag{display:none}.qp-nav{padding:10px 12px;gap:8px}.qp-brand svg{width:28px;height:28px}.qp-b2{font-size:14px}.qp-b3{font-size:10px;letter-spacing:2.5px}.qp select.dash-select{font-size:13px;padding:6px 6px}}
+  .qp-out{background:none;border:1px solid #2a2222;color:#9a9a9a;border-radius:10px;padding:6px 10px;font-family:inherit;font-weight:800;font-size:12px;cursor:pointer}
+  .qp-upd{color:#6b6b6b;font-size:12px;font-weight:700;text-align:center;margin-top:-8px}
+  .dash-skeleton{opacity:.35}
+</style></head><body>
+<div class="qp-login" id="login">
+  <form id="loginForm" autocomplete="on">
+    <svg viewBox="0 0 48 48" width="56" height="56" aria-hidden="true" style="filter:drop-shadow(0 0 12px rgba(229,9,20,.5))"><defs><linearGradient id="lg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff3b4a"/><stop offset="1" stop-color="#a3000e"/></linearGradient></defs><path d="M24 43 C10 33 3 25 3 16 A10.5 10.5 0 0 1 24 10.5 A10.5 10.5 0 0 1 45 16 C45 25 38 33 24 43Z" fill="url(#lg2)"/><circle cx="24" cy="21" r="4.2" fill="#0b0b0b"/><path d="M21.6 23.5 L20.6 31 H27.4 L26.4 23.5Z" fill="#0b0b0b"/></svg>
+    <h2>Painel do Quiz</h2>
+    <p>Digite a senha para ver os números.</p>
+    <input type="password" id="senha" placeholder="Senha" autocomplete="current-password" required>
+    <button type="submit">Entrar</button>
+    <div class="erro" id="erro"></div>
+  </form>
+</div>
+<div class="qp" id="painel">
+  <nav class="qp-nav" id="topo">
+    <div class="qp-brand" aria-label="Guia da Obsessão Inabalável">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <defs><linearGradient id="qplg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff3b4a"/><stop offset="1" stop-color="#a3000e"/></linearGradient></defs>
+        <path d="M24 43 C10 33 3 25 3 16 A10.5 10.5 0 0 1 24 10.5 A10.5 10.5 0 0 1 45 16 C45 25 38 33 24 43Z" fill="url(#qplg)"/>
+        <circle cx="24" cy="21" r="4.2" fill="#0b0b0b"/><path d="M21.6 23.5 L20.6 31 H27.4 L26.4 23.5Z" fill="#0b0b0b"/>
+      </svg>
+      <div class="qp-bt"><span class="qp-b1">GUIA DA</span><span class="qp-b2">OBSESSÃO</span><span class="qp-b3">INABALÁVEL</span></div>
+    </div>
+    <div class="qp-nav-right">
+      <button class="qp-out" id="sair" type="button">Sair</button>
+      <span class="qp-tag">Período</span>
+      <select class="dash-select" id="periodo" aria-label="Período">
+        <option value="hoje">Hoje</option>
+        <option value="7d">Últimos 7 dias</option>
+        <option value="30d">Últimos 30 dias</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="qp-main">
+  <header class="qp-hero" id="titulo">
+    <h1 class="qp-title">Painel do <span>Quiz</span></h1>
+    <p class="qp-lede" id="resumo-frase"><span data-draw="per-txt">—</span>, <b data-draw="f-vis" data-s="resumo" data-field="visitantes" data-row="0">—</b> pessoas entraram no quiz, <b data-draw="f-oferta" data-s="resumo" data-field="taxa_oferta" data-row="0">—</b> chegaram à oferta e <b data-draw="f-check" data-s="resumo" data-field="clicaram_checkout" data-row="0">—</b> clicaram em comprar.</p>
+  </header>
+
+  <p class="qp-upd" id="upd">Carregando…</p>
+
+  <section class="qp-card qp-live" id="online">
+    <div class="qp-live-grid">
+      <div>
+        <span class="qp-badge"><span class="qp-dot"></span>AO VIVO</span>
+        <h2 class="qp-h2">Online <span>agora</span></h2>
+        <div class="qp-live-num"><span class="qp-big dash-skeleton" data-draw="online-total" data-s="online_total">—</span><span class="qp-muted">pessoas</span></div>
+      </div>
+      <div>
+        <p class="qp-sub" style="margin-bottom:10px">Em qual tela elas estão agora. Atualiza sozinho a cada 30 segundos.</p>
+        <div class="qp-where" data-draw="online-onde" data-s="online"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="qp-kpis" id="numeros">
+    <div class="qp-card qp-kpi" id="kpi-visitantes"><p class="qp-k-label">Entraram no quiz</p><div class="qp-k-val dash-skeleton" data-draw="k-vis" data-s="resumo" data-field="visitantes" data-row="0">—</div><div class="qp-k-note"><span data-draw="k-cel" data-s="resumo" data-field="pct_celular" data-row="0">—</span> no celular</div></div>
+    <div class="qp-card qp-kpi" id="kpi-perguntas"><p class="qp-k-label">Chegaram às perguntas</p><div class="qp-k-val dash-skeleton" data-draw="k-quiz" data-s="resumo" data-field="iniciaram_quiz" data-row="0">—</div><div class="qp-k-note"><span data-draw="k-quiz-pct" data-s="resumo" data-field="taxa_quiz" data-row="0">—</span> de quem entrou</div></div>
+    <div class="qp-card qp-kpi" id="kpi-oferta"><p class="qp-k-label">Viram a oferta</p><div class="qp-k-val dash-skeleton" data-draw="k-oferta" data-s="resumo" data-field="viram_oferta" data-row="0">—</div><div class="qp-k-note"><span data-draw="k-oferta-pct" data-s="resumo" data-field="taxa_oferta" data-row="0">—</span> de quem entrou</div></div>
+    <div class="qp-card qp-kpi" id="kpi-checkout"><p class="qp-k-label">Clicaram em comprar</p><div class="qp-k-val dash-skeleton" data-draw="k-check" data-s="resumo" data-field="clicaram_checkout" data-row="0">—</div><div class="qp-k-note"><span data-draw="k-check-pct" data-s="resumo" data-field="taxa_checkout_oferta" data-row="0">—</span> de quem viu a oferta</div></div>
+  </section>
+
+  <div class="qp-row">
+    <section class="qp-card" id="funil">
+      <h2 class="qp-h2">Funil do <span>quiz</span></h2>
+      <p class="qp-sub">Quantas pessoas chegaram a cada tela, e a porcentagem em relação a quem entrou.</p>
+      <p class="qp-callout" id="maior-queda">Maior perda: <b data-draw="queda-etapa" data-s="queda" data-field="etapa" data-row="0">—</b>. Só <b data-draw="queda-pct" data-s="queda" data-field="pct_da_anterior" data-row="0">—</b> de quem estava na tela anterior continuou.</p>
+      <div class="qp-bars dash-skeleton" data-draw="funil" data-s="funil"></div>
+    </section>
+
+    <section class="qp-card" id="respostas">
+      <h2 class="qp-h2">Respostas das <span>perguntas</span></h2>
+      <p class="qp-sub">Perfil de quem respondeu. Cada pessoa conta uma vez por pergunta.</p>
+      <div class="qp-bars dash-skeleton" data-draw="respostas" data-s="respostas"></div>
+    </section>
+  </div>
+
+  <section class="qp-card" id="ao-longo">
+    <h2 class="qp-h2">Entradas ao longo do <span>tempo</span></h2>
+    <p class="qp-sub">Por hora (hoje) ou por dia (7 e 30 dias). A parte vermelha forte é quem clicou em comprar.</p>
+    <div class="qp-chart dash-skeleton" data-draw="serie" data-s="serie"></div>
+  </section>
+
+  <section class="qp-card" id="campanhas">
+    <h2 class="qp-h2">Por campanha e <span>criativo</span></h2>
+    <p class="qp-sub">Vem dos parâmetros utm_campaign e utm_content do link do anúncio.</p>
+    <div class="qp-table-wrap">
+      <table class="qp-table" data-s="campanhas" data-row-key="campanha,criativo">
+        <thead><tr>
+          <th data-field="campanha">Campanha</th><th data-field="criativo">Criativo</th><th data-field="visitantes">Entraram</th>
+          <th data-field="viram_oferta">Viram oferta</th><th data-field="clicaram_checkout">Clicaram comprar</th>
+          <th data-field="taxa_oferta">% oferta</th><th data-field="taxa_checkout">% comprar</th>
+        </tr></thead>
+        <tbody data-draw="campanhas"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <details id="como-contamos">
+    <summary>Como cada número é contado</summary>
+    <ul>
+      <li><b>Entraram no quiz:</b> pessoas diferentes (uma por aba do navegador) que abriram a primeira tela no período.</li>
+      <li><b>Online agora:</b> quem mandou sinal do quiz nos últimos 70 segundos. O quiz manda um sinal a cada 25 segundos enquanto está na tela.</li>
+      <li><b>Clicaram em comprar:</b> clique em qualquer botão de compra da oferta. A venda em si é registrada na Cakto, não aqui.</li>
+      <li><b>Campanha e criativo:</b> só aparecem se o link do anúncio tiver utm_campaign e utm_content. Sem isso, a pessoa entra como "(sem campanha)".</li>
+      <li>"Hoje" segue o horário de Brasília.</li>
+    </ul>
+  </details>
+  <footer class="qp-foot" id="rodape">Os 12 Gatilhos Secretos · painel do quiz · atualiza sozinho a cada 30 segundos</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script>
+const API = "https://xctiourbcydfzimleaws.supabase.co/rest/v1/rpc/quiz_painel";
+const KEY = "sb_publishable_qNgEj3lEUsmW9-0DvMbxLQ_HIUqc-c9";
+const $ = (s) => document.querySelector(s), $$ = (s) => [...document.querySelectorAll(s)];
+const loc = d3.formatLocale({decimal: ',', thousands: '.', grouping: [3], currency: ['R$ ', '']});
+const fInt = (v) => v == null ? '—' : loc.format(',d')(+v);
+const fPct = (v) => (v == null || isNaN(v)) ? '—' : loc.format(',.1f')(+v) + '%';
+let senha = null, periodo = 'hoje', D = null, timer = null;
+try { senha = localStorage.getItem('qp_senha'); periodo = localStorage.getItem('qp_periodo') || 'hoje'; } catch {}
+
+async function carregar() {
+  const r = await fetch(API, {method: 'POST', headers: {apikey: KEY, 'Content-Type': 'application/json'}, body: JSON.stringify({p_senha: senha, p_periodo: periodo})});
+  if (!r.ok) { const e = await r.json().catch(() => ({})); throw Object.assign(new Error(e.message || 'erro'), {senha: /senha/.test(e.message || '')}); }
+  D = await r.json(); desenhar();
+  $('#upd').textContent = 'Atualizado às ' + new Date().toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit', second: '2-digit'});
+}
+async function ciclo() {
+  try { await carregar(); } catch (e) {
+    if (e.senha) { sair(); $('#erro').textContent = 'Senha incorreta.'; } else { $('#upd').textContent = 'Sem conexão. Tentando de novo…'; }
+  }
+}
+function iniciar() { $('#login').hidden = true; ciclo(); clearInterval(timer); timer = setInterval(ciclo, 30000); }
+function sair() { senha = null; try { localStorage.removeItem('qp_senha'); } catch {} clearInterval(timer); $('#login').hidden = false; }
+
+$('#loginForm').addEventListener('submit', async (ev) => {
+  ev.preventDefault(); $('#erro').textContent = ''; senha = $('#senha').value.trim();
+  try { await carregar(); try { localStorage.setItem('qp_senha', senha); } catch {} iniciar(); }
+  catch (e) { $('#erro').textContent = e.senha ? 'Senha incorreta.' : 'Não consegui conectar. Tente de novo.'; senha = null; }
+});
+$('#sair').addEventListener('click', sair);
+$('#periodo').value = periodo;
+$('#periodo').addEventListener('change', (e) => { periodo = e.target.value; try { localStorage.setItem('qp_periodo', periodo); } catch {} ciclo(); });
+window.addEventListener('resize', () => D && desenhar());
+
+const set = (name, txt) => $$(`[data-draw="${name}"]`).forEach((el) => { el.textContent = txt; el.classList.remove('dash-skeleton'); });
+function barras(el, rows, {label, value, pct, drop}) {
+  el.replaceChildren(); el.classList.remove('dash-skeleton');
+  rows.forEach((r) => {
+    const row = document.createElement('div'); row.className = 'qp-bar' + (drop && drop(r) ? ' is-drop' : '');
+    const l = document.createElement('div'); l.className = 'qp-bar-label'; l.textContent = label(r); l.title = label(r);
+    const tr = document.createElement('div'); tr.className = 'qp-bar-track';
+    const f = document.createElement('div'); f.className = 'qp-bar-fill'; f.style.width = Math.max(0, Math.min(100, +pct(r) || 0)) + '%'; tr.append(f);
+    const v = document.createElement('div'); v.className = 'qp-bar-val'; v.textContent = fInt(value(r)) + ' · ' + fPct(pct(r));
+    row.append(l, tr, v); el.append(row);
+  });
+}
+function vazio(el, t) { el.replaceChildren(); el.classList.remove('dash-skeleton'); const p = document.createElement('div'); p.className = 'qp-empty'; p.textContent = t; el.append(p); }
+
+function desenhar() {
+  const R = D.resumo || {};
+  const nomes = {hoje: 'Hoje', '7d': 'Nos últimos 7 dias', '30d': 'Nos últimos 30 dias'};
+  set('per-txt', nomes[periodo]);
+  set('f-vis', fInt(R.visitantes)); set('f-oferta', fPct(R.taxa_oferta)); set('f-check', fInt(R.clicaram_checkout));
+  set('k-vis', fInt(R.visitantes)); set('k-cel', fPct(R.pct_celular)); set('k-quiz', fInt(R.iniciaram_quiz)); set('k-quiz-pct', fPct(R.taxa_quiz));
+  set('k-oferta', fInt(R.viram_oferta)); set('k-oferta-pct', fPct(R.taxa_oferta)); set('k-check', fInt(R.clicaram_checkout)); set('k-check-pct', fPct(R.taxa_checkout_oferta));
+
+  const on = D.online || [];
+  set('online-total', fInt(on.reduce((s, r) => s + +r.online, 0)));
+  const onde = $('[data-draw="online-onde"]'); onde.replaceChildren();
+  if (!on.length) { const p = document.createElement('span'); p.className = 'qp-muted'; p.textContent = 'Ninguém no quiz neste momento.'; onde.append(p); }
+  on.forEach((r) => { const c = document.createElement('span'); c.className = 'qp-chip'; const b = document.createElement('b'); b.textContent = fInt(r.online); c.append(String(r.etapa).replace(/^\d+\.\s*/, '') + ' · ', b); onde.append(c); });
+
+  const funil = D.funil || [];
+  let pior = null, antes = null;
+  for (const r of funil) { if (antes && antes.pessoas > 0 && r.pct_da_anterior != null && (!pior || r.pct_da_anterior < pior.pct_da_anterior)) pior = r; antes = r; }
+  $('#maior-queda').hidden = !pior;
+  if (pior) { set('queda-etapa', pior.etapa); set('queda-pct', fPct(pior.pct_da_anterior)); }
+  const fEl = $('[data-draw="funil"]');
+  if (!funil.length || !funil[0].pessoas) vazio(fEl, 'Ninguém entrou no quiz neste período.');
+  else barras(fEl, funil, {label: (r) => r.etapa, value: (r) => r.pessoas, pct: (r) => r.pct_do_inicio, drop: (r) => pior && r.ordem === pior.ordem});
+
+  const rEl = $('[data-draw="respostas"]'); const resp = D.respostas || [];
+  if (!resp.length) vazio(rEl, 'Ninguém respondeu as perguntas neste período.');
+  else { rEl.replaceChildren(); rEl.classList.remove('dash-skeleton');
+    d3.groups(resp, (r) => r.pergunta).forEach(([n, rows]) => {
+      const box = document.createElement('div'); box.className = 'qp-q';
+      const h = document.createElement('p'); h.className = 'qp-q-title'; h.textContent = n + '. ' + rows[0].tema;
+      const b = document.createElement('div'); b.className = 'qp-bars'; b.style.minHeight = '0';
+      barras(b, rows, {label: (r) => r.resposta, value: (r) => r.pessoas, pct: (r) => r.pct});
+      box.append(h, b); rEl.append(box);
+    }); }
+
+  const tb = $('[data-draw="campanhas"]'); tb.replaceChildren(); const camp = D.campanhas || [];
+  if (!camp.length) { const tr = document.createElement('tr'); const td = document.createElement('td'); td.colSpan = 7; td.className = 'qp-empty'; td.textContent = 'Nenhuma entrada neste período.'; tr.append(td); tb.append(tr); }
+  camp.forEach((r) => { const tr = document.createElement('tr');
+    [r.campanha, r.criativo, fInt(r.visitantes), fInt(r.viram_oferta), fInt(r.clicaram_checkout), fPct(r.taxa_oferta), fPct(r.taxa_checkout)].forEach((v) => { const td = document.createElement('td'); td.textContent = v; tr.append(td); });
+    tb.append(tr); });
+
+  serie($('[data-draw="serie"]'), D.serie || []);
+}
+
+const parse = d3.timeParse('%Y-%m-%dT%H:%M');
+function serie(el, data) {
+  if (!data.length) return vazio(el, 'Ninguém entrou no quiz neste período.');
+  el.replaceChildren(); el.classList.remove('dash-skeleton');
+  const porHora = periodo === 'hoje';
+  const fx = porHora ? d3.timeFormat('%Hh') : d3.timeFormat('%d/%m');
+  const rows = data.map((r) => ({...r, t: parse(r.momento)})).filter((r) => r.t);
+  const W = el.clientWidth || 600, H = 220, m = {t: 18, r: 8, b: 26, l: 34};
+  const x = d3.scaleBand().domain(rows.map((r) => r.momento)).range([m.l, W - m.r]).padding(0.25);
+  const y = d3.scaleLinear().domain([0, d3.max(rows, (r) => +r.visitantes) || 1]).nice().range([H - m.b, m.t]);
+  const svg = d3.select(el).append('svg').attr('width', W).attr('height', H).attr('role', 'img').attr('aria-label', 'Entradas no quiz por ' + (porHora ? 'hora' : 'dia'));
+  svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat((v) => loc.format(',d')(v)).tickSize(-(W - m.l - m.r)))
+    .call((g) => { g.select('.domain').remove(); g.selectAll('line').style('stroke', 'rgba(255,255,255,.07)'); });
+  const step = Math.max(1, Math.ceil(rows.length / Math.max(1, Math.floor((W - m.l) / 46))));
+  svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickValues(x.domain().filter((_, i) => i % step === 0)).tickFormat((k) => fx(parse(k))).tickSize(0))
+    .call((g) => { g.select('.domain').style('stroke', 'rgba(255,255,255,.18)'); g.selectAll('text').attr('dy', '1em'); });
+  const tip = document.createElement('div'); tip.className = 'qp-tip'; tip.hidden = true; el.append(tip);
+  const g = svg.append('g');
+  g.selectAll('rect.v').data(rows).join('rect').attr('x', (r) => x(r.momento)).attr('width', x.bandwidth()).attr('y', (r) => y(r.visitantes)).attr('height', (r) => y(0) - y(r.visitantes)).attr('rx', 2).style('fill', '#ff2a3d').style('opacity', 0.28);
+  g.selectAll('rect.c').data(rows).join('rect').attr('x', (r) => x(r.momento)).attr('width', x.bandwidth()).attr('y', (r) => y(r.clicaram_checkout)).attr('height', (r) => y(0) - y(r.clicaram_checkout)).attr('rx', 2).style('fill', '#ff2a3d');
+  g.selectAll('rect.hit').data(rows).join('rect').attr('x', (r) => x(r.momento)).attr('width', x.bandwidth()).attr('y', m.t).attr('height', H - m.b - m.t).style('fill', 'transparent')
+    .on('pointerenter pointermove', (ev, r) => { tip.hidden = false; tip.textContent = fx(r.t) + ': ' + fInt(r.visitantes) + ' entraram · ' + fInt(r.clicaram_checkout) + ' clicaram em comprar';
+      const bx = el.getBoundingClientRect(); let left = ev.clientX - bx.left + 10; if (left + tip.offsetWidth > bx.width) left = ev.clientX - bx.left - tip.offsetWidth - 10;
+      tip.style.left = Math.max(0, left) + 'px'; tip.style.top = (ev.clientY - bx.top - 34) + 'px'; })
+    .on('pointerleave', () => { tip.hidden = true; });
+}
+
+if (senha) iniciar(); else $('#login').hidden = false;
+</script>
+</body></html>
